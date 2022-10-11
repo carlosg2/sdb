@@ -1,11 +1,12 @@
 <script>
   export let post
+  export let pre
 </script>
 
 <article
   class="border border-primary bg-base-100 shadow-xl mb-10 p-5 transition card hover:text-accent-focus first:pt-0"
 >
-  <a sveltekit:prefetch href={`/posts/${post.slug}`}>
+  <a sveltekit:prefetch href={`/${pre}/${post.slug}`}>
     <div>
       <h2 class="font-black mt-5 mb-1 text-3xl">
         {post.title}

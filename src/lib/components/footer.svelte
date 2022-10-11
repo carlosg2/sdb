@@ -4,14 +4,15 @@
   import Twitter from '@icons/twitter.svelte'
   import YouTube from '@icons/you-tube.svelte'
   import { socialLinks } from '@lib/site-config'
+  import { description, siteName } from '@lib/site-config'
 </script>
 
 <footer class="bg-neutral text-neutral-content p-10 footer">
   <div>
     <BadgeCheck height={60} width={60} />
     <p>
-      ACME Industries Ltd.
-      <br />Providing reliable tech since 1992
+      {siteName}
+      <br />{description}
     </p>
   </div>
   <div>
