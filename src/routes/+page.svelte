@@ -1,5 +1,4 @@
 <script>
-  import EndlessClouds from '@components/endless-clouds.svelte'
   import Head from '@components/head.svelte'
   import { description, siteName } from '@lib/site-config'
 </script>
@@ -15,14 +14,16 @@
         Hello there
       </h1>
       <h2 class="font-bold text-secondary mb-5 text-4xl">
-        Welcome to the {siteName}
+        {siteName}
       </h2>
       <p class="mb-5">
         {description}
       </p>
-      <a sveltekit:prefetch href={`/posts`} class="btn btn-primary"
-        >Check Out The Posts Page</a
-      >
+      <a sveltekit:prefetch href={`/posts`} class="btn btn-primary" >
+        Blog
+      </a>
     </div>
+
+    
   </div>
 </div>

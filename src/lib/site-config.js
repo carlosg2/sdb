@@ -1,16 +1,13 @@
 export const siteName = 'Club de Pollos'
 export const website = 'https://www.clubdepollos.com'
 export const description = 'Somos Pollos, no gallinas'
-
-
 export const authorName = 'El Equipo Club de Pollos'
-
-
 
 export const pages = [
   { title: 'Inicio', path: '/' },
-  { title: 'Blog', path: '/posts' },
+  { title: 'Menu', path: '/menu' },
   { title: 'Sucursales', path: '/sucursales' },
+  { title: 'Blog', path: '/posts' },
   { title: 'Acerca', path: '/about' },
 ]
 

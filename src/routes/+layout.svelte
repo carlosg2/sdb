@@ -11,10 +11,10 @@
   })
 </script>
 
-<Nav />
+<!-- <Nav /> -->
 
 <main
-  class="mx-auto max-w-[90ch] px-4 relative sm:px-6 lg:px-8 break-normal"
+  class="mx-auto max-w-[90ch] bg-base-200 px-4 relative break-normal"
 >
   <slot />
 </main>
