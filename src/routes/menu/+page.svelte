@@ -1,25 +1,25 @@
 {#each [1,2] as item}
 
-<div class="text-base-content z-10 px-4 w-full items-start pb-4 pt-12 select-none" >
-  <div class="shrink text-2xl tracking-wide font-bold">
+<div class="text-base-content z-10 px-8 w-full items-start pb-4 pt-12 select-none" >
+  <div class="shrink text-2xl tracking-wide font-bold pb-1">
     Categoría Signature {item}
   </div>
   <div class=" text-sm  line-clamp-2 opacity-60">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis.</div>
 </div> 
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4 "> 
+<div class="grid grid-cols-1 md:grid-cols-2 gap-1 px-4 md:gap-4 "> 
   
   {#each [1,2,3,4] as item}
 
     <div class="text-base-content flex px-4 items-start border border-base-200 bg-base-100 rounded-xl select-none" >
       <div class=" w-full relative py-4">
         <div class="flex justify-between items-center ">
-          <div class="shrink text-md tracking-wide font-bold leading-5">
+          <div class="shrink text-base tracking-wide font-bold leading-5 opacity-80">
             Product {item}
           </div>
         </div>
 
-        <div class="text-base-content font-semibold tracking-wide flex items-center space-x-1 " >
+        <div class="text-base-content font-semibold tracking-wide flex items-center space-x-1 opacity-80" >
           $ 15
         </div>
         <div class="text-sm md:text-base line-clamp-2 opacity-60">

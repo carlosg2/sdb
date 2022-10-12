@@ -14,7 +14,7 @@
 <!-- <Nav /> -->
 
 <main
-  class="mx-auto max-w-[90ch] bg-base-200 px-4 relative break-normal"
+  class="mx-auto max-w-[90ch] relative break-normal"
 >
   <slot />
 </main>
