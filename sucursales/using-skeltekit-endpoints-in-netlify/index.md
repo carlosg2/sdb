@@ -1,7 +1,7 @@
 ---
 date: 2021-08-31
 title: Using SvelteKit Endpoints in Netlify
-published: true
+published: false
 ---
 
 I've been using Netlify recently to make a project that uses

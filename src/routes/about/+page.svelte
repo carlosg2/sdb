@@ -7,11 +7,15 @@
 
 <Head title={`About`} />
 
-<h1 class="font-bold mb-5 text-5xl">About</h1>
-<div class="mb-10 all-prose">
-  <svelte:component this={copy} />
-</div>
+<main class="mx-auto max-w-screen-lg relative break-normal">
 
-<div class="flex flex-col mb-20 w-full">
-  <div class="divider" />
-</div>
+  <h1 class="font-bold mb-5 text-5xl text-center">About</h1>
+  <div class="mb-10 all-prose">
+    <svelte:component this={copy} />
+  </div>
+
+  <div class="flex flex-col mb-20 w-full">
+    <div class="divider" />
+  </div>
+
+</main>

@@ -11,12 +11,9 @@
   })
 </script>
 
-<!-- <Nav /> -->
+<Nav />
 
-<main
-  class="mx-auto max-w-[90ch] relative break-normal"
->
-  <slot />
-</main>
+<slot />
 
 <Footer />
+ 

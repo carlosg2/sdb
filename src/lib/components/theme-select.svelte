@@ -1,10 +1,10 @@
 <div>
   <select
     data-choose-theme
-    class="bg-primary text-primary-content pr-9 select select-bordered select-primary select-xs"
+    class="bg-primary text-primary-content pr-2 w-10 select select-bordered select-primary select-sm text-base"
   >
     <option disabled="disabled" selected="selected"
-      >Choose a theme</option
+      ></option
     >
     <option value="aqua">Aqua</option>
     <option value="black">Black</option>

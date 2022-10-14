@@ -1,17 +1,17 @@
 <script>
-  import BadgeCheck from '@icons/badge-check.svelte'
   import GitHub from '@icons/git-hub..svelte'
   import Twitter from '@icons/twitter.svelte'
   import YouTube from '@icons/you-tube.svelte'
   import { socialLinks } from '@lib/site-config'
   import { description, siteName } from '@lib/site-config'
+  import Logo from '@icons/logo.svelte'
 </script>
 
 <footer class="bg-neutral text-neutral-content p-10 footer">
   <div>
-    <BadgeCheck height={60} width={60} />
+    <Logo></Logo>
     <p>
-      {siteName}
+      <!-- {siteName} -->
       <br />{description}
     </p>
   </div>

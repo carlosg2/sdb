@@ -1,7 +1,7 @@
 ---
 date: 2021-06-22
 title: SvelteKit .env secrets
-published: true
+published: false
 ---
 
 So SvelteKit is super awesome n' all and the best thing ever but have

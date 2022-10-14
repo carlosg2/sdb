@@ -1,7 +1,7 @@
 ---
 date: 2021-08-09
 title: Make an RSS Feed for your SvelteKit Project
-published: true
+published: false
 ---
 
 The indie web is alive and well and there are more and more people
