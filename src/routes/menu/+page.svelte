@@ -32,45 +32,45 @@
   </ul>
 </div>
 
-<main class="mx-auto max-w-screen-lg relative break-normal">
+<main class="mx-auto max-w-screen-lg relative break-normal text-base-content">
 
   {#each tienda.groups as group} 
 
-    <div id="{group.button}"  class="text-base-content scroll-pt-40 z-10 px-8 w-full items-start pb-4 pt-8 md:pt-12 select-none " >
-      <div class="shrink text-2xl tracking-wide font-bold pb-1">
+    <div id="{group.button}"  class=" scroll-mt-14 z-10 px-8 w-full items-start pb-4 pt-4 md:pt-12 select-none " >
+      <div class="shrink text-2xl md:text-3xl tracking-wide font-bold pb-0">
         {group.title}
       </div>
       <!-- <div class=" text-sm  line-clamp-2 opacity-60">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis.</div> -->
     </div> 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-1 px-4 md:gap-4 "> 
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-1 px-4 pb-4 md:gap-4 "> 
       
       {#each group.productos as item}
 
-        <div class="text-base-content flex px-4 items-start  bg-base-100 rounded-2xl select-none" >
+        <div class="flex px-4 items-start border-[0.5px] border-base-300 bg-base-100 rounded-2xl select-none" >
           
           <div class=" w-full relative py-4">
             
             <div class="flex justify-between items-center ">
-              <div class="shrink text-base-content tracking-wide font-bold leading-5">
+              <div class="shrink tracking-wide font-semibold leading-5 text-lg md:text-xl">
                  {item.title}
               </div>
             </div>
 
-            <div class="text-base-content font-semibold tracking-wide flex items-center space-x-1 opacity-80" >
+            <div class="font-semibold tracking-wide flex items-center space-x-1 opacity-80" >
               $ {item.price}
             </div>
             
-            <div class="text-sm md:text-base line-clamp-2 opacity-60">
+            <div class="text-base md:text-base line-clamp-2 opacity-60">
               {item.description}
             </div>
 
           </div>
 
           <div class="ml-4 shrink-0  py-4">
-            <img
-              class="rounded-md w-20 h-20 md:h-28 md:w-28"
-              src="https://api.lorem.space/image/pizza?w=150&h=150&hash=8B7BCDC2{item}"
+            <div
+              class="rounded-lg w-20 h-20 md:w-36 md:h-28 bg-cover bg-center"  
+              style="background-image: url(assets/images/{item.image_url});"
               alt="demo"
             />
           </div>

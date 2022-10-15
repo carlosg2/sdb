@@ -1,7 +1,7 @@
 <div>
   <select
     data-choose-theme
-    class="bg-primary text-primary-content pr-2 w-10 select select-bordered select-primary select-sm text-base"
+    class="bg-primary text-primary-content pr-2 w-24 select select-bordered select-primary select-sm text-base"
   >
     <option disabled="disabled" selected="selected"
       ></option

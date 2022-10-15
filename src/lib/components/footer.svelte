@@ -5,6 +5,7 @@
   import { socialLinks } from '@lib/site-config'
   import { description, siteName } from '@lib/site-config'
   import Logo from '@icons/logo.svelte'
+    import ThemeSelect from './theme-select.svelte'
 </script>
 
 <footer class="bg-neutral text-neutral-content p-10 footer">
@@ -28,5 +29,8 @@
         <GitHub />
       </a>
     </div>
+
+    <ThemeSelect/> 
+
   </div>
 </footer>

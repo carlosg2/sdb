@@ -12,30 +12,30 @@
             {
                "id": 1,
                "title": "De Remate",
-               "description": "6 piezas (3 Piernas y 3 Muslos) 2 Panecillos, más 2 Purés",
+               "description": "6 piezas (3 Piernas y 3 Muslos) 2 Panecillos, 2 Purés",
                "price": 139,
-               "image_url": ""
+               "image_url": "gololimpico.png"
             },
             {
                "id": 2,
                "title": "De Tijera",
                "description": "6 Piezas (Fajitas) 2 Panecillos, 2 Purés, 2 Aderezos",
                "price": 259,
-               "image_url": ""
+               "image_url": "detijera.png"
             },
             {
                "id": 3,
                "title": "De Palomita",
                "description": "10 Piezas (5 Piernas y 5 Muslos) 4 Panecillos, 4 Purés",
                "price": 239,
-               "image_url": ""
+               "image_url": "depalomita.png"
             },
             {
                "id": 3,
                "title": "De Chilena",
                "description": "10 Piezas (Fajitas) 4 Panecillos, 4 Purés, 4 Aderezos",
                "price": 449,
-               "image_url": ""
+               "image_url": "dechilena.png"
             }
 
          ]
@@ -52,21 +52,21 @@
                "title": "Área Chica",
                "description": "1 Pierna, 1 Muslo, 1 Puré",
                "price": 49,
-               "image_url": ""
+               "image_url": "areachica.png"
             },
             {
                "id": 3,
                "title": "Balón de Oro",
                "description": "1 Pierna, 1 Muslo, 1 Fajita, 1 Puré, 1 Panecillo",
                "price": 89,
-               "image_url": ""
+               "image_url": "balondeoro.png"
             },
             {
                "id": 3,
                "title": "Fuera de Lugar",
                "description": "2 Fajita, 1 Puré, 1 Aderezo, 1 Panecillo",
                "price": 99,
-               "image_url": ""
+               "image_url": "fueradelugar.png"
             }
 
          ]
@@ -83,28 +83,28 @@
                "title": "Contra Golpe",
                "description": "8 Piezas (Piernas y Muslos)",
                "price": 119,
-               "image_url": ""
+               "image_url": "contragolpe.png"
             },
             {
                "id": 3,
                "title": "Gol Olimpico",
                "description": "2 Piernas, 2 Muslos, 4 Fajitas, 2 Panecillos, 2 Aderezos",
                "price": 249,
-               "image_url": ""
+               "image_url": "gololimpico.png"
             },
             {
                "id": 3,
                "title": "Penalty",
                "description": "12 Piezas (Pierna y Muslo), 4 Pures y 4 Panecillos",
                "price": 259,
-               "image_url": ""
+               "image_url": "penalty.png"
             },
             {
                "id": 3,
                "title": "Somos Pollos",
                "description": "3 Piernas, 3 Muslos, 6 fajitas, 4 Panecillos, 3 Aderezos",
                "price": 349,
-               "image_url": ""
+               "image_url": "somospollos.png"
             }
 
          ]
@@ -121,14 +121,14 @@
                "title": "Panecillo",
                "description": "1 Panecillo",
                "price": 12,
-               "image_url": ""
+               "image_url": "panecito.png"
             },
             {
                "id": 3,
                "title": "Aderezo",
-               "description": "Elige entre Bufalo, Ranch ó BBQ",
+               "description": "1 Aderezo (Elige entre Bufalo, Ranch ó BBQ)",
                "price": 12,
-               "image_url": ""
+               "image_url": "aderezos.png"
             }
             ,
             {
@@ -136,14 +136,36 @@
                "title": "Puré",
                "description": "1 Puré Individual",
                "price": 25,
-               "image_url": ""
+               "image_url": "pureindividual.png"
             },
             {
                "id": 3,
-               "title": "Panecillo 3",
-               "description": "description",
+               "title": "Goleador",
+               "description": "2 Purés Individuales",
                "price": 12,
-               "image_url": ""
+               "image_url": "goleador.png"
+            },
+            {
+               "id": 3,
+               "title": "Papas Fritas",
+               "description": "Naturales y en su punto",
+               "price": 12,
+               "image_url": "aderezos.png"
+            }
+            ,
+            {
+               "id": 3,
+               "title": "De Taconcito",
+               "description": "4 Panecillos y 2 Purés",
+               "price": 25,
+               "image_url": "detaconcito.png"
+            },
+            {
+               "id": 3,
+               "title": "Tiro de Esquina",
+               "description": "3 Purés individuales",
+               "price": 12,
+               "image_url": "gololimpico.png"
             }
 
          ]

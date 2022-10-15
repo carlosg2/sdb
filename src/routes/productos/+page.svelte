@@ -56,7 +56,7 @@
       
       {#each item.values as item}
 
-        <div class="text-base-content flex px-4 items-start  bg-base-100 rounded-2xl select-none" >
+        <div class="text-base-content flex px-4 items-start borde-[0.5px] border-base-300 bg-base-100 rounded-2xl select-none" >
           
           <div class=" w-full relative py-4">
             
@@ -78,7 +78,7 @@
 
           <div class="ml-4 shrink-0  py-4">
             <img
-              class="rounded-md w-20 h-20 md:h-28 md:w-28"
+              class="rounded-md w-20 h-20 md:h-28 md:w-28"  
               src="https://api.lorem.space/image/pizza?w=150&h=150&hash=8B7BCDC2{item.descripcion}"
               alt="demo"
             />

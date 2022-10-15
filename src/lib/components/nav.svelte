@@ -1,6 +1,6 @@
 <script>
   import { pages, siteName } from '@lib/site-config'
-  import ThemeSelect from './theme-select.svelte'
+
   import logo from '@icons/logo.svelte'
     import Logo from '@icons/logo.svelte'
 </script>
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="navbar-end">
-    <ThemeSelect />
+    
     <div class="dropdown dropdown-left lg:hidden">
       <div tabindex="0" class="m-1 btn">Menu</div>
       <ul
