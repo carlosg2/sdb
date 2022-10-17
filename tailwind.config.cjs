@@ -75,6 +75,10 @@ const config = {
           primary: "#ff0000",
           "primary-content": "#ffffff",
 
+          neutral: "#F3F3F3",
+          "neutral-focus": "#E3E5E8",
+          "neutral-content": "#2A2D32",
+
           "base-100": "#ffffff",
           "base-200": "#F3F3F3",
           "base-300": "#E3E5E8",
@@ -103,8 +107,8 @@ const config = {
           accent: "#1FB2A5",
           "accent-content": "#ffffff",
           
-          neutral: "#191D24",
-          "neutral-focus": "#111318",
+          neutral: "#1f2023",
+          "neutral-focus": "#2A2D32",
           "neutral-content": "#D3D5DA",
 
           "base-200": "#000000",

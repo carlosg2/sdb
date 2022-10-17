@@ -1,8 +1,12 @@
 <script>
   import Head from '@components/head.svelte'
   import tienda from '$lib/data/menu.json';
+  import Scrolly from '@lib/components/helpers/Scrolly.svelte'
 
+  // import Scroller from '@sveltejs/svelte-scroller';
   // export let data
+
+  export let scrollIndex = 0;
 
 </script>
 
@@ -10,77 +14,96 @@
 
 
 
+
 <div class="hero " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);">
-  <div class="hero-overlay bg-base-100 opacity-80"></div>
+  <div class="hero-overlay bg-base-100 opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md pt-4 text-base-content">
       <h1 class="mb-4 text-5xl font-bold ">Menú</h1>
-      <p class="text-xl font-medium mb-4 opacity-80">Ni Tigres, ni Rayados tienen estas piernas.</p>
+      <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
     </div>
   </div>
 </div>
 
-<div class="  relative break-normal sticky top-0 z-10 bg-base-100 border-b-[0.5px] border-base-300">
+
+
+<div class="  relative break-normal sticky top-0 z-10  bg-base-100/95  border-b-[0.5px] border-base-300">
+  
   <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  ">
-    
-    {#each tienda.groups as link} 
+ 
+    {#each tienda.groups as link, index} 
       <li>
-        <a href="#{link.button}" class="btn btn-sm btn-primary md:btn-lg mr-2">{link.button}</a>
+        <a href="#{link.button}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm  md:btn-lg mr-2">{link.button}</a>  
       </li>
     {/each}
 
   </ul>
+
 </div>
+
+
 
 <main class="mx-auto max-w-screen-lg relative break-normal text-base-content">
 
+  <Scrolly bind:value={scrollIndex} >
+
   {#each tienda.groups as group} 
 
-    <div id="{group.button}"  class=" scroll-mt-14 z-10 px-8 w-full items-start pb-4 pt-4 md:pt-12 select-none " >
-      <div class="shrink text-2xl md:text-3xl tracking-wide font-bold pb-0">
-        {group.title}
+    <div id="{group.button}"  class=" scroll-mt-20 z-10 px-4 w-full items-start py-4 md:pt-12 select-none " >
+      
+      <div class="shrink text-2xl md:text-3xl tracking-wide font-bold pb-0 px-4">
+        {group.title} 
       </div>
+      
       <!-- <div class=" text-sm  line-clamp-2 opacity-60">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis.</div> -->
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-1 py-4 md:gap-4 "> 
+      
+        {#each group.productos as item} 
+  
+          <div class="flex px-4 items-start border-[0.5px] border-base-300 bg-base-100 rounded-2xl select-none" >
+            
+            <div class=" w-full relative py-4">
+              
+              <div class="flex justify-between items-center ">
+                <div class="shrink tracking-wide font-semibold leading-5 text-lg md:text-xl">
+                   {item.title}
+                </div>
+              </div>
+              
+              <div class="font-semibold tracking-wide flex items-center space-x-1 opacity-80" >
+                $ {item.price}
+              </div>
+
+              <div class="text-base md:text-base line-clamp-2 opacity-60">
+                {item.description}
+              </div>
+  
+              
+  
+            </div>
+  
+            <div class="ml-4 shrink-0 py-4">
+              <div
+                class="rounded-lg w-20 h-20 md:w-36 md:h-28 bg-cover bg-center"  
+                style="background-image: url(assets/images/{item.image_url});"
+                alt="demo"
+              />
+            </div>
+
+          </div>
+  
+        {/each}
+  
+      </div>
+
     </div> 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-1 px-4 pb-4 md:gap-4 "> 
-      
-      {#each group.productos as item}
-
-        <div class="flex px-4 items-start border-[0.5px] border-base-300 bg-base-100 rounded-2xl select-none" >
-          
-          <div class=" w-full relative py-4">
-            
-            <div class="flex justify-between items-center ">
-              <div class="shrink tracking-wide font-semibold leading-5 text-lg md:text-xl">
-                 {item.title}
-              </div>
-            </div>
-
-            <div class="font-semibold tracking-wide flex items-center space-x-1 opacity-80" >
-              $ {item.price}
-            </div>
-            
-            <div class="text-base md:text-base line-clamp-2 opacity-60">
-              {item.description}
-            </div>
-
-          </div>
-
-          <div class="ml-4 shrink-0  py-4">
-            <div
-              class="rounded-lg w-20 h-20 md:w-36 md:h-28 bg-cover bg-center"  
-              style="background-image: url(assets/images/{item.image_url});"
-              alt="demo"
-            />
-          </div>
-        </div>
-
-      {/each}
-
-    </div>
+    
 
   {/each}
+
+</Scrolly>
 
 
 <!-- 

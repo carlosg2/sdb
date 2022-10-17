@@ -6,6 +6,7 @@
 </script>
 
 <div class="bg-black shadow-lg text-neutral-content top-0 z-10 navbar">
+  
   <div class="mx-2 px-2 navbar-start">
     <Logo />
     <!-- <span class="font-bold text-lg">{siteName}</span> -->
@@ -22,6 +23,9 @@
       {/each}
     </div>
   </div>
+
+  
+
   <div class="navbar-end">
     
     <div class="dropdown dropdown-left lg:hidden">
