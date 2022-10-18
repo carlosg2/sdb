@@ -66,7 +66,7 @@
             <div class=" w-full relative py-4">
               
               <div class="flex justify-between items-center ">
-                <div class="shrink tracking-wide font-semibold leading-5 text-lg md:text-xl">
+                <div class="shrink tracking-wide font-semibold leading-5 text-base md:text-xl">
                    {item.title}
                 </div>
               </div>
