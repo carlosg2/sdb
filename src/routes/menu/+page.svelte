@@ -19,7 +19,7 @@
   <div class="hero-overlay bg-base-100 opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md pt-4 text-base-content">
-      <h1 class="mb-4 text-5xl font-bold ">Menú</h1>
+      <h1 class="mb-4 text-5xl font-display font-bold ">Menú</h1>
       <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
     </div>
   </div>
@@ -51,7 +51,7 @@
 
     <div id="{group.button}"  class=" scroll-mt-20 z-10 px-4 w-full items-start py-4 md:pt-12 select-none " >
       
-      <div class="shrink text-2xl md:text-3xl tracking-wide font-bold pb-0 px-4">
+      <div class="shrink text-2xl md:text-3xl text-center tracking-wide font-bold font-display pb-0 px-4">
         {group.title} 
       </div>
       

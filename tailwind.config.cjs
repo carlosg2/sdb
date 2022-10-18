@@ -25,7 +25,7 @@ const config = {
 	theme: {
 		extend: {
             fontFamily: {
-              display: ["Gilroy", ...defaultTheme.fontFamily.sans],
+              display: ["Norwester Pro", ...defaultTheme.fontFamily.sans],
               sans: ["Gilroy", ...defaultTheme.fontFamily.sans],
             },
             fontSize: {
@@ -44,11 +44,7 @@ const config = {
               // '7xl': '5rem',
             },
             colors: {
-              'teci-blue-dark': '#002b7f',
-              'teci-blue-light': '#0072C6',
-              'teci-gray': '#b1b1b1',
-              'pyrosim': '#990000',
-              'pathfinder': '#006000'
+              'teci-blue-dark': '#002b7f'
             },
             lineHeight: {
               'extra-loose': '2.5',

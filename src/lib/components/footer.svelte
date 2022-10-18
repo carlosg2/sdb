@@ -4,7 +4,7 @@
   import YouTube from '@icons/you-tube.svelte'
   import { socialLinks } from '@lib/site-config'
   import { description, siteName } from '@lib/site-config'
-  import Logo from '@icons/logo.svelte'
+  import Logo from '@icons/logo2.svelte'
     import ThemeSelect from './theme-select.svelte'
     import BadgeCheck from '@lib/icons/badge-check.svelte'
 
@@ -111,7 +111,7 @@
 </ul>
 
 
-  <!-- <div>
+  <!-- <div> 
     <Logo></Logo>
     <p>
       <br />{description}
@@ -139,7 +139,7 @@
 <!-- End block -->
 <footer class="bg-base-300 text-center">
   <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
-      <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+      <div class="grid grid-cols-2 gap-8  lg:grid-cols-4">
           <div>
               <h3 class="mb-6 text-xs font-semibold text-base-content uppercase">Menú</h3>
               <ul class="text-base-content opacity-80">
@@ -153,12 +153,12 @@
                       <a href="#" class="hover:underline">Paquetes Familiares</a>
                   </li>
                   <li class="mb-4">
-                      <a href="#" class="hover:underline">Complementos</a>
+                      <a href="#" class="hover:underline">Complementos</a> 
                   </li>
               </ul>
           </div>
           <div>
-              <h3 class="mb-6 text-xs font-semibold text-gray-900 uppercase dark:text-white">Ayuda y Servicio</h3>
+              <h3 class="mb-6 text-xs font-semibold text-base-content uppercase">Ayuda y Servicio</h3>
               <ul class="text-base-content opacity-80">
                 <li class="mb-4">
                     <a href="#" class="hover:underline">Contactanos</a>
@@ -176,7 +176,7 @@
               </ul>
           </div>
           <div>
-              <h3 class="mb-6 text-xs font-semibold text-gray-900 uppercase dark:text-white">Legales</h3>
+              <h3 class="mb-6 text-xs font-semibold text-base-content0 uppercase ">Legales</h3>
               <ul class="text-base-content opacity-80">
                   <li class="mb-4">
                       <a href="#" class="hover:underline">Política de privacidad</a>
@@ -190,7 +190,7 @@
               </ul>
           </div>
           <div>
-              <h3 class="mb-6 text-xs font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+              <h3 class="mb-6 text-xs font-semibold text-base-content uppercase ">Company</h3>
               <ul class="text-base-content opacity-80">
                   <li class="mb-4">
                       <a href="#" class=" hover:underline">Acerca</a>
@@ -204,6 +204,8 @@
                   <li class="mb-4">
                       <a href="#" class="hover:underline">Ubicaciones</a>
                   </li>
+
+                  <ThemeSelect/> 
               </ul>
           </div>
           
@@ -213,7 +215,7 @@
           <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
             <Logo/>  
           </a>
-          <span class="block text-sm text-center text-base-content opacity-60">©2022 {siteName}. Derechos Reservados.<br/>Sitio con tecnología <a href="#_" class="text-blue-500 font-semibold hover:underline">extra</a>.
+          <span class="block text-sm text-center text-base-content opacity-60">©2022 {siteName}. Derechos Reservados.<br/>Sitio con tecnología <a href="#_" class="text-blue-500 font-semibold hover:underline">extra</a>
           </span>
           
       </div>
