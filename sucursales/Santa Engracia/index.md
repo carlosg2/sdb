@@ -2,6 +2,8 @@
 date: 2021-08-09
 title: Santa Engracia
 published: true
+state: Nuevo León
+city: Escobedo
 ---
 
 The indie web is alive and well and there are more and more people

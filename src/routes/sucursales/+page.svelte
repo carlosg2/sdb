@@ -2,13 +2,15 @@
   import Head from '$lib/components/head.svelte'
   import PostCard from '$lib/components/post-card.svelte'
 
+  import { groupBy,toArray } from 'lodash';
+
   export let data
   let { posts } = data
 
   export let scrollIndex = 0;
 </script>
 
-<Head title={'All the Posts'} />
+<Head title={'Sucursales'} />
 
 <div class="hero " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);">
   <div class="hero-overlay bg-base-100 opacity-60"></div>
@@ -24,10 +26,10 @@
   
   <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  ">
  
-    {#each posts as post, index}
+    {#each posts as post, index} 
       {#if post.published}
         <li>
-          <a href="#{post.title}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm  md:btn-lg mr-2">{post.title}</a>  
+          <a href="#{post.title}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm  md:btn-lg mr-2">ok</a>  
         </li>
       {/if}
       

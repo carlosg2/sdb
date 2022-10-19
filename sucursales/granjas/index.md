@@ -2,6 +2,8 @@
 date: 2022-08-30
 title: Granjas
 published: true
+state: Tamaulipas
+city: Reynosa
 ---
 
 Sucursal Bit of preamble before I kick this off, subscribers to my newsletter

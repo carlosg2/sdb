@@ -24,10 +24,6 @@ export const load = async ({ fetch }) => {
       return productData.Productos
   }
 
-
-
-  
-
   return {
      products: fetchProducts(),
   }

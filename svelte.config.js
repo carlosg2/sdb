@@ -9,7 +9,7 @@ const config = {
   extensions: ['.svelte', ...mdsvexConfig.extensions],
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({ edge: true }),
     alias: {
       $lib: resolve('./src/lib'),
     },

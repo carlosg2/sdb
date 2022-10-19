@@ -20,6 +20,8 @@
 
   export let scrollIndex = 0;
 
+  const json = groupBy(data, 'NAT');
+
 </script>
 
 <Head title={'Menú'} />

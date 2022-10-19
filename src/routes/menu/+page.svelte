@@ -57,11 +57,11 @@
       
       <!-- <div class=" text-sm  line-clamp-2 opacity-60">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis.</div> -->
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-1 py-4 md:gap-4 "> 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-1 py-4 md:gap-4 first:rounded-2xl last:rounded-2xl"> 
       
         {#each group.productos as item} 
   
-          <div class="flex px-4 items-start border-[0.5px] border-base-300 bg-base-100 rounded-2xl select-none" >
+          <div class="flex px-4 items-start border-[0.5px] border-base-300 bg-base-100  select-none" >
             
             <div class=" w-full relative py-4">
               

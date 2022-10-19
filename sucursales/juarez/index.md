@@ -2,6 +2,8 @@
 date: 2021-08-21
 title: Juárez
 published: true
+state: Nuevo León
+city: Juárez
 ---
 
 If you want to rank on Google (and other search engines) you need to
