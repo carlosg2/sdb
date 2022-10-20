@@ -20,7 +20,7 @@
 
   export let scrollIndex = 0;
 
-  const json = groupBy(data, 'NAT');
+  // const json = groupBy(data, 'NAT');
 
 </script>
 
@@ -99,7 +99,7 @@
       </div>
 
     </div> 
-
+    scrollIntoView
     
 
   {/each}
