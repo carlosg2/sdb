@@ -20,13 +20,7 @@
       <h1 class="mb-5 text-6xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>
       <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
       <!-- <button class="btn btn-primary">CTA</button> -->
-      <span>Tu ip <strong>{data.ip}</strong></span>
-      <span>Tu ciudad <strong>{data.city}</strong></span>
-      <span>Tu pais <strong>{data.country}</strong></span>
-      <span>Tu region <strong>{data.region}</strong></span>
-      <span>Ubicacion <strong>{data.latitude},{data.longitude}</strong></span>
-      <span>Zona <strong>{data.timezone}</strong></span>
-				
+     
     </div>
   </div>
 </section>
@@ -138,3 +132,8 @@
     
   </div>
 </div> -->
+
+
+<p class="w-full text-sm opacity-30 text-center p-4">{data.ip} / {data.city} / {data.country} / {data.region} / {data.latitude},{data.longitude} /{data.timezone}</p>
+
+  
