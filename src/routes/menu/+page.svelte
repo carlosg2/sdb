@@ -2,11 +2,12 @@
   import Head from '@components/head.svelte'
   import tienda from '$lib/data/menu.json';
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
+  import useScrollChild from '@apsc/scroll-child-action';
 
   // import Scroller from '@sveltejs/svelte-scroller';
   // export let data
 
-  export let scrollIndex = 0;
+   let active = 0;
 
 </script>
 
@@ -32,20 +33,28 @@
   <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  ">
  
     {#each tienda.groups as link, index} 
-      <li>
-        <a href="#{link.button}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm  md:btn-lg mr-2">{link.button}</a>  
+      <li use:useScrollChild={active === index ? { x: true } : false}>
+        <a  href="#{link.button}" class:btn-primary="{active === index}" class="btn btn-sm  md:btn-lg mr-2">{link.button}</a>  
       </li>
     {/each}
 
   </ul>
 
+
 </div>
+
+<div class="  relative break-normal sticky top-0 z-10  bg-base-100/95  border-b-[0.5px] border-base-300">
+  
+  
+
+</div>
+
 
 
 
 <main class="mx-auto max-w-screen-lg relative break-normal text-base-content">
 
-  <Scrolly bind:value={scrollIndex} >
+  <Scrolly bind:value={active} >
 
   {#each tienda.groups as group} 
 

@@ -11,6 +11,7 @@
     "clean": "rm -rf .svelte-kit .vercel_build_output build node_modules"
   },
   "devDependencies": {
+    "@apsc/scroll-child-action": "^0.0.3",
     "@sveltejs/adapter-vercel": "1.0.0-next.77",
     "@sveltejs/kit": "next",
     "@tailwindcss/typography": "0.5.7",

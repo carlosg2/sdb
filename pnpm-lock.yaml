@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@apsc/scroll-child-action': ^0.0.3
   '@sveltejs/adapter-vercel': 1.0.0-next.77
   '@sveltejs/kit': next
   '@tailwindcss/typography': 0.5.7
@@ -26,8 +27,9 @@ specifiers:
   vite: 3.1.6
 
 devDependencies:
+  '@apsc/scroll-child-action': 0.0.3_svelte@3.50.1
   '@sveltejs/adapter-vercel': 1.0.0-next.77
-  '@sveltejs/kit': 1.0.0-next.517_svelte@3.50.1+vite@3.1.6
+  '@sveltejs/kit': 1.0.0-next.520_svelte@3.50.1+vite@3.1.6
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   autoprefixer: 10.4.12_postcss@8.4.17
   cssnano: 5.1.13_postcss@8.4.17
@@ -51,6 +53,14 @@ devDependencies:
   vite: 3.1.6
 
 packages:
+
+  /@apsc/scroll-child-action/0.0.3_svelte@3.50.1:
+    resolution: {integrity: sha512-l9nhkm+p/N/3r1r62GrFpnjZQ+0ZVSPlbPrSgjdvSL6BZIF3uSIGWTgxXpiTuorT/DsIgSwGlbx0f/p5dvaR3g==}
+    peerDependencies:
+      svelte: ^3.50.1
+    dependencies:
+      svelte: 3.50.1
+    dev: true
 
   /@esbuild/android-arm/0.15.10:
     resolution: {integrity: sha512-FNONeQPy/ox+5NBkcSbYJxoXj9GWu8gVGJTVmUyoOCKQFDTrHVKgNSzChdNt0I8Aj/iKcsDf2r9BFwv+FSNUXg==}
@@ -140,8 +150,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.517_svelte@3.50.1+vite@3.1.6:
-    resolution: {integrity: sha512-DG6RB0akR9StVWulhNo4YXRBlmPWIPXHEfrmhzUi5QgwbDaGEL9wkb43oe/FBlAJCGjB+xDUJgRWKf3oGJIbpA==}
+  /@sveltejs/kit/1.0.0-next.520_svelte@3.50.1+vite@3.1.6:
+    resolution: {integrity: sha512-flroQQEwIHx6IEkskHGQ90Ri+gFCnAs4ZFRsG7QuTbuBu7XSeJNQs3J73pmBQoKp0pWnbwZ3YZMtwBJWF/I7qA==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
