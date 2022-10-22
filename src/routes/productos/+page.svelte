@@ -38,15 +38,15 @@
   </div>
 </div>
 
-<div class=" sticky top-0 z-10 bg-base-100 border-b-[0.5px] border-base-300" >
-  <div class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto overflow-visible px-4 py-3 md:py-4 no-scrollbar ">
+<div class=" sticky top-0 z-10 bg-base-100 border-b-[0.5px] border-base-300 " >
+  <div class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar scroll-smooth">
     {#each groups as link, index}  
       <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.category}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm md:btn-md w-auto mr-2">{link.category}</a>
     {/each}
   </div>
 </div>
 
-<main class="mx-auto max-w-screen-lg relative break-normal">
+<main class="mx-auto max-w-screen-lg relative break-normal scroll-smooth">
 
   <Scrolly bind:value={scrollIndex} >
 
@@ -98,7 +98,7 @@
       </div>
 
     </div> 
-    scrollIntoView
+    
     
 
   {/each}

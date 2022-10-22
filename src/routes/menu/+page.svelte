@@ -30,7 +30,7 @@
 
 <div class="  relative break-normal sticky top-0 z-10  bg-base-100/95  border-b-[0.5px] border-base-300">
   
-  <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  ">
+  <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  scroll-smooth">
  
     {#each tienda.groups as link, index} 
       <li use:useScrollChild={active === index ? { x: true } : false} >
@@ -52,7 +52,7 @@
 
 
 
-<main class="mx-auto max-w-screen-lg relative break-normal text-base-content">
+<main class="mx-auto max-w-screen-lg relative break-normal text-base-content scroll-smooth">
 
   <Scrolly bind:value={active} >
 
