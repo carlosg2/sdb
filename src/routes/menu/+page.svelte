@@ -33,7 +33,7 @@
   <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  ">
  
     {#each tienda.groups as link, index} 
-      <li use:useScrollChild={active === index ? { x: true } : false}>
+      <li use:useScrollChild={active === index ? { x: true } : false} >
         <a  href="#{link.button}" class:btn-primary="{active === index}" class="btn btn-sm  md:btn-lg mr-2">{link.button}</a>  
       </li>
     {/each}

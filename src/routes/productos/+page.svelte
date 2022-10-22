@@ -1,6 +1,7 @@
 <script>
   import Head from '@components/head.svelte'
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
+  import useScrollChild from '@apsc/scroll-child-action';
 
   export let data
   let { products } = data
@@ -40,10 +41,8 @@
 <div class=" sticky top-0 z-10 bg-base-100 border-b-[0.5px] border-base-300" >
   <div class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto overflow-visible px-4 py-3 md:py-4 no-scrollbar ">
     {#each groups as link, index}  
-   
-      <a href="#{link.category}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm md:btn-md w-auto mr-2">{link.category}</a>
-    
-  {/each}
+      <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.category}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm md:btn-md w-auto mr-2">{link.category}</a>
+    {/each}
   </div>
 </div>
 
