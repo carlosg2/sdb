@@ -3,14 +3,16 @@ import { error } from '@sveltejs/kit'
 export const load = async ({ fetch, params }) => {
   try {
     const fetchProducts = async () => {   
-      const productRes = await fetch('https://www.extrapos.mx/pollos/GetProductosMenu.php?cliente_id=0&tipoVentaID=2}')
+      const url = `https://cloud.extrapos.mx/gogo/Menu.php?&mSucursalID=${params.slug}`;
+      const productRes = await fetch(url)
       const productData = await productRes.json()
-      return productData.Productos
+      return productData
     }
 
     return {
-      products: fetchProducts(),
+      tienda: fetchProducts(),
       slug: params.slug
+      
     }
   } catch (err) {
     throw error(404, err.message)
