@@ -5,7 +5,7 @@ export const authorName = 'El Equipo Club de Pollos'
 
 export const pages = [
   { title: 'Inicio', path: '/' },
-  { title: 'Nuestro Menú', path: '/menu' },
+  { title: 'Nuestro Menú', path: '/menu/menu' },
 //   { title: 'Productos', path: '/productos' },
   { title: 'Ubicaciones', path: '/sucursales' },
 //   { title: 'Blog', path: '/posts' },

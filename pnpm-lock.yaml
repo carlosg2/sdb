@@ -11,6 +11,7 @@ specifiers:
   lodash: ^4.17.21
   mdsvex: 0.10.6
   mdsvex-relative-images: 1.0.2
+  medium-zoom: ^1.0.6
   postcss: 8.4.17
   postcss-load-config: 4.0.1
   prettier: 2.7.1
@@ -29,7 +30,7 @@ specifiers:
 devDependencies:
   '@apsc/scroll-child-action': 0.0.3_svelte@3.50.1
   '@sveltejs/adapter-vercel': 1.0.0-next.77
-  '@sveltejs/kit': 1.0.0-next.520_svelte@3.50.1+vite@3.1.6
+  '@sveltejs/kit': 1.0.0-next.522_svelte@3.50.1+vite@3.1.6
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   autoprefixer: 10.4.12_postcss@8.4.17
   cssnano: 5.1.13_postcss@8.4.17
@@ -37,6 +38,7 @@ devDependencies:
   lodash: 4.17.21
   mdsvex: 0.10.6_svelte@3.50.1
   mdsvex-relative-images: 1.0.2
+  medium-zoom: 1.0.6
   postcss: 8.4.17
   postcss-load-config: 4.0.1_postcss@8.4.17
   prettier: 2.7.1
@@ -150,8 +152,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.520_svelte@3.50.1+vite@3.1.6:
-    resolution: {integrity: sha512-flroQQEwIHx6IEkskHGQ90Ri+gFCnAs4ZFRsG7QuTbuBu7XSeJNQs3J73pmBQoKp0pWnbwZ3YZMtwBJWF/I7qA==}
+  /@sveltejs/kit/1.0.0-next.522_svelte@3.50.1+vite@3.1.6:
+    resolution: {integrity: sha512-dVVrRPbXlAut4vg8kbCeZOjUZnYB7ZvDKp/yAx8InpDF0P1bvUDlc++DXFeMBdXX8bakTA3NGonWnDjqslCsZw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -1621,6 +1623,10 @@ packages:
       prismjs: 1.29.0
       svelte: 3.50.1
       vfile-message: 2.0.4
+    dev: true
+
+  /medium-zoom/1.0.6:
+    resolution: {integrity: sha512-UdiUWfvz9fZMg1pzf4dcuqA0W079o0mpqbTnOz5ip4VGYX96QjmbM+OgOU/0uOzAytxC0Ny4z+VcYQnhdifimg==}
     dev: true
 
   /merge2/1.4.1:

@@ -21,6 +21,7 @@
     "lodash": "^4.17.21",
     "mdsvex": "0.10.6",
     "mdsvex-relative-images": "1.0.2",
+    "medium-zoom": "^1.0.6",
     "postcss": "8.4.17",
     "postcss-load-config": "4.0.1",
     "prettier": "2.7.1",

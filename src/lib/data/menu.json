@@ -1,5 +1,8 @@
 {
-   "sucursal": "Granjas",
+   "store": "Granjas",
+   "direccion": "direccion",
+   // mas campos
+
    
    "groups": [
       {
@@ -7,6 +10,7 @@
          "title": "Paquetes de Remate",
          "button": "Promociones",
          "description": "description",
+         "image_url": "gololimpico.png"
 
          "productos": [
             {
@@ -45,6 +49,7 @@
          "title": "Paquetes individuales",
          "button": "Individuales",
          "description": "description",
+         "image_url": "gololimpico.png"
 
          "productos": [
             {
@@ -76,6 +81,7 @@
          "title": "Paquetes Familiares",
          "button": "Familiares",
          "description": "description",
+         "image_url": "gololimpico.png"
 
          "productos": [
             {
@@ -114,6 +120,7 @@
          "title": "Complementos y Extras",
          "button": "Complementos",
          "description": "description",
+         "image_url": "gololimpico.png"
 
          "productos": [
             {

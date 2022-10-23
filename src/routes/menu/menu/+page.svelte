@@ -4,6 +4,8 @@
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
   import useScrollChild from '@apsc/scroll-child-action';
 
+  
+
   // import Scroller from '@sveltejs/svelte-scroller';
   // export let data
 
@@ -95,7 +97,7 @@
             <div class="ml-4 shrink-0 py-4">
               <div
                 class="rounded-lg w-20 h-20 md:w-36 md:h-28 bg-cover bg-center"  
-                style="background-image: url(assets/images/{item.image_url});"
+                style="background-image: url(../assets/images/{item.image_url});"
                 alt="demo"
               />
             </div>
