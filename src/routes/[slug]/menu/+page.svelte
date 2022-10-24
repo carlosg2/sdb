@@ -4,25 +4,10 @@
   import useScrollChild from '@apsc/scroll-child-action';
 
   export let data
-  console.log(data)
   let { tienda } = data
-
-  // let groups = products.reduce((curr, val) =>
-  // {
-  //   let group = curr.find(g => g.category === `${val.grupo}`)
-    
-  //   if (group) {
-  //     group.values.push(val)
-  //   } else {
-  //     curr.push({ category: `${val.grupo}`, values: [ val ] }) 
-  //   }
-  //   return curr
-
-  // }, [])
 
   export let scrollIndex = 0;
 
-  // const json = groupBy(data, 'NAT');
 
 </script>
 
@@ -42,7 +27,7 @@
 <div class=" sticky top-0 z-10 bg-base-100 border-b-[0.5px] border-base-300 " >
   <div class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar scroll-smooth">
     {#each tienda.groups as link, index}  
-      <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm md:btn-md w-auto mr-2">{link.title}</a>
+      <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm md:btn-lg w-auto mr-2">{link.title}</a>
     {/each}
   </div>
 </div>
@@ -61,7 +46,7 @@
       
       
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-1 py-4 md:gap-4 "> 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4 py-4"> 
       
         {#each item.productos as item}
   
@@ -97,13 +82,7 @@
               
             {/if}
   
-            <!-- <div class="ml-4 shrink-0  py-4">
-              <img
-                class="rounded-md w-20 h-20 md:h-28 md:w-28"  
-                src="https://api.lorem.space/image/pizza?w=150&h=150&hash=8B7BCDC2{item.descripcion}"
-                alt="demo"
-              />
-            </div> -->
+            
           </div>
   
         {/each}
