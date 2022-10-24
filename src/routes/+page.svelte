@@ -7,6 +7,8 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
+
+  console.log(data)
 </script>
 
 <Head title={`Hello World`} />

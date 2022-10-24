@@ -6,11 +6,11 @@ export const load = async ({ fetch, params }) => {
       const url = `https://www.extrapos.mx/pollos/GetSucursales.php`;
       const productRes = await fetch(url)
       const productData = await productRes.json()
-      return productData
+      return productData.sucursales
     }
 
     return {
-      tienda: fetchProducts(),
+      sucursales: fetchProducts(),
       slug: params.slug
       
     }
