@@ -27,7 +27,7 @@
 <div class=" sticky top-0 z-10 bg-base-100 border-b-[0.5px] border-base-300 " >
   <div class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar scroll-smooth">
     {#each tienda.groups as link, index}  
-      <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm md:btn-lg w-auto mr-2">{link.title}</a>
+      <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{scrollIndex === index}" class="btn btn-md md:btn-lg w-auto mr-2">{link.title}</a>
     {/each}
   </div>
 </div>
