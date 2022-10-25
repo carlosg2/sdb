@@ -11,7 +11,7 @@
 
 </script>
 
-<Head title={'Menú'} />
+<Head title={'Menú - Club de Pollos - ' + tienda.store} />
 
 
 <div class="hero " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);">
