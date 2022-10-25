@@ -16,18 +16,16 @@ import { error } from '@sveltejs/kit'
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ fetch, params, event }) => {
   try {
-    const fetchProducts = async () => {   
+    const fetchSucursales = async () => {   
       const url = `https://www.extrapos.mx/pollos/GetSucursales.php`;
-      const productRes = await fetch(url)
-      const productData = await productRes.json()
-      return productData.sucursales
+      const res = await fetch(url)
+      const data = await res.json()
+      return data.sucursales
     }
 
     return {
-      sucursales: fetchProducts(),
+      sucursales: fetchSucursales(),
       slug: params.slug,
-      
-		
       
     }
   } catch (err) {

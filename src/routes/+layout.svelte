@@ -8,8 +8,6 @@
 
   export let data;
 
-  console.log(data)
-
 
   onMount(async () => {
     themeChange(false)

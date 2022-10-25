@@ -3,8 +3,8 @@
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
   import useScrollChild from '@apsc/scroll-child-action';
 
-  export let data
-  $: tienda = data.tienda;
+  export let data;
+  $: tienda = data;
 
   export let scrollIndex = 0;
 

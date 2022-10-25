@@ -11,8 +11,8 @@ export const load = async ({ fetch, params }) => {
     }
 
     return {
-      tienda: fetchProducts(),
-      slug: params.slug
+      tienda: fetchProducts()
+      
       
     }
   } catch (err) {

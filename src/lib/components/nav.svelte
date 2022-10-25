@@ -1,5 +1,6 @@
 <script>
   import { pages, siteName } from '@lib/site-config'
+  import { goto } from '$app/navigation';
 
 
     import Logo from '@icons/logo.svelte'
@@ -53,7 +54,8 @@
           
           {#each sucursales.sucursales as item}
 
-          <a href="/{item.id}/menu" class="btn">{item.nombre}</a>
+          <a  on:click|preventDefault={() => goto('/'+ item.id +'/menu')} 
+            href="/{item.id}/menu" rel="external" class="btn">{item.nombre}</a>
         {/each}
          
         </div>
@@ -75,7 +77,7 @@
       >
         {#each pages as { title, path }}
           <li class="menu-item">
-            <a sveltekit:prefetch href={path}>{title}</a>
+            <a href={path}>{title}</a>
           </li>
         {/each}
       </ul>
