@@ -23,7 +23,7 @@
     <div class="flex items-stretch">
       {#each pages as { title, path }}
         <a
-          sveltekit:prefetch
+          data-sveltekit-prefetch
           href={path}
           class="rounded-btn btn btn-ghost btn-sm">{title}</a
         >
@@ -54,7 +54,7 @@
           
           {#each sucursales.sucursales as item}
 
-          <a  on:click|preventDefault={() => goto('/'+ item.id +'/menu')} 
+          <a data-sveltekit-prefetch on:click|preventDefault={() => goto('/'+ item.id +'/menu')} 
             href="/{item.id}/menu" rel="external" class="btn">{item.nombre}</a>
         {/each}
          

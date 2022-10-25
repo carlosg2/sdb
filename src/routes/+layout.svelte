@@ -16,7 +16,7 @@
 
 <Nav sucursales="{data}"  />
 
-<slot />
+<slot  />
 
 <Footer />
 
