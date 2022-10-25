@@ -37,14 +37,14 @@
               
             {#each data.sucursales as sucursal}
 
-            <a href="{sucursal.id}/menu" class="flex flex-col items-start justify-between p-6 space-y-4 overflow-hidden transition-shadow duration-200 bg-base-100 bg-top bg-cover  shadow-xl rounded-2xl group hover:shadow-2xl">
+            <a href="{sucursal.id}/menu" class="flex flex-col items-start justify-between p-6 space-y-4 overflow-hidden transition duration-200 bg-base-100 bg-top bg-cover  shadow-xl rounded-2xl group hover:bg-base-300 hover:shadow-2xl">
               <!-- <div class="flex items-center justify-center w-10 h-10 text-center bg-top bg-cover rounded-full bg-indigo-50">
                   <p class="relative">
                       <svg class="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
                   </p>
               </div> -->
               <p  class="font-bold text-base-content">{sucursal.nombre}</p>
-              <p class="text-sm leading-5 base-content opacity-60">{sucursal.direccion}</p>
+              <p class="text-sm leading-5 base-content opacity-60">{sucursal.direccion} {sucursal.noexterior} {sucursal.nointerior} {sucursal.colonia}, {sucursal.ciudad}, {sucursal.estado} </p>
             </a>
               
             {/each}

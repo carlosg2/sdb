@@ -43,10 +43,10 @@
         
        
   
-        Granjas
+        Sucursales
       </label>
       
-      <div tabindex="0" class="dropdown-content card card-compact w-64 p-2 shadow bg-base-100 text-base-content mt-2">
+      <div tabindex="0" class="dropdown-content card card-compact w-64 h-96 overflow-y-auto p-2 shadow bg-base-100 text-base-content mt-2">
         <div class="card-body">
           <h3 class="card-title">Card Title</h3>
           
