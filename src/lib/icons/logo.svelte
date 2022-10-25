@@ -7,7 +7,7 @@
 <svg xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     {height} 
-    {width} class="h-10 w-36 md:h-14 md:w-48 transition-all "
+    {width} class="h-10 w-44 sm:h-14 sm:w-52 transition-all "
     viewBox="0 0 253.992 55.846">
 <defs>
   <clipPath id="clip-clubdepollos_logo">
