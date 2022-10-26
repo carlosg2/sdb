@@ -13,9 +13,9 @@
 <Head title={`Club de Pollos`} />
 
 
-<section class="hero h-[500px] " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);" >
+<section class="hero h-[500px] " style="background-image: url(/assets/images/background.jpg);" >
   <!-- style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);" -->
-  <div class="hero-overlay bg-base-200 bg-opacity-80"></div>
+  <div class="hero-overlay bg-base-200 bg-opacity-40"></div>
   <div class="hero-content text-center text-base-content">
     <div class="max-w-2xl py-20"> 
       <h1 class="mb-5 text-6xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>

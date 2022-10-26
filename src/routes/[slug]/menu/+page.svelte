@@ -3,6 +3,7 @@
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
   import useScrollChild from '@apsc/scroll-child-action';
 
+
   export let data
   $: tienda = data.tienda;
 
@@ -14,8 +15,8 @@
 <Head title={'Menú - Club de Pollos - ' + tienda.store} />
 
 
-<div class="hero " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);">
-  <div class="hero-overlay bg-base-100 opacity-80"></div>
+<div class="hero " style="background-image: url(../assets/images/background.jpg);">
+  <div class="hero-overlay bg-base-100 opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md pt-4 text-base-content">
       <h1 class="mb-4 text-5xl font-display font-bold ">{tienda.store}</h1>
