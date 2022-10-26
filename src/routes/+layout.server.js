@@ -17,7 +17,7 @@ import { error } from '@sveltejs/kit'
 export const load = async ({ fetch, params, event }) => {
   try {
     const fetchSucursales = async () => {   
-      const url = `https://www.extrapos.mx/pollos/GetSucursales.php`;
+      const url = `https://pollos.extrapos.mx/pollos/GetSucursales.php`;
       const res = await fetch(url)
       const data = await res.json()
       return data.sucursales

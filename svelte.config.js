@@ -13,9 +13,8 @@ const config = {
     alias: {
       $lib: resolve('./src/lib'),
     },
-    csrf: {
-      checkOrigin: false
-    },
+    
+
   },
 
   preprocess: [

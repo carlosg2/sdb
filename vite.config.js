@@ -11,6 +11,10 @@ const config = {
       // posts, copy
       allow: ['..'],
     },
+
+    
+
+
   },
   resolve: {
     alias: {
