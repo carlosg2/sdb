@@ -26,7 +26,7 @@
   </div>
 </section>
 
-<section class="">
+<section class="hidden">
   <div class="relative">
       <!-- <div class="absolute inset-0 w-screen h-full pb-20 transform opacity-50">
           <img alt="feature" src="https://cdn.devdojo.com/images/march2021/bg-gradient.png" class="absolute left-0 object-cover w-full h-full">

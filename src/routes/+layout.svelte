@@ -1,5 +1,7 @@
 <script>
   import Footer from '@components/footer.svelte'
+  import { page } from '$app/stores'
+  import { fly } from 'svelte/transition'
   import Nav from '@components/nav.svelte'
   import { onMount } from 'svelte'
   import { themeChange } from 'theme-change'
@@ -16,7 +18,13 @@
 
 <Nav sucursales="{data}"  />
 
+{#key $page.url}
+<div in:fly={{ y: -10, duration:300, delay:300 }}
+     >
 <slot  />
+</div>
+
+{/key}
 
 <Footer />
 
