@@ -14,11 +14,15 @@
   onMount(async () => {
     themeChange(false)
   })
+
+  $: url = String($page.url).split("#")[0];
 </script>
+
+
 
 <Nav sucursales="{data}"  />
 
-{#key $page.url}
+{#key url }
 <div in:fly={{ y: -10, duration:300, delay:300 }}
      >
 <slot  />
