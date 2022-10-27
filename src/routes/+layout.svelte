@@ -22,7 +22,7 @@
 
 <Nav sucursales="{data}"  />
 
-{#key url }
+{#key {url} }
 <div in:fly={{ y: -10, duration:300, delay:300 }}
      >
 <slot  />
