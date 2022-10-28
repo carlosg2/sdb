@@ -9,7 +9,9 @@ export const pages = [
 // //   { title: 'Productos', path: '/productos' },
 //   { title: 'Ubicaciones', path: '/sucursales' },
 //   { title: 'Blog', path: '/posts' },
-  { title: 'Nuestra Historia', path: '/about' },
+  { title: 'Nuestra Historia', path: '/acerca' },
+  { title: 'Sucursales', path: '/sucursales' },
+  { title: 'Contacto', path: '/contacto' },
 ]
 
 export const socialLinks = [

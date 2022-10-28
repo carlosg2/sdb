@@ -18,32 +18,30 @@
 
 
 
-<div class="hero " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);">
+<div class="hero " style="background-image: url(../assets/images/background.jpg);">
   <div class="hero-overlay bg-base-100 opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md pt-4 text-base-content">
-      <h1 class="mb-4 text-5xl font-display font-bold ">Menú</h1>
-      <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
+    <div class="max-w-md pt-24 text-base-content">
+      <h1 class="mb-4 text-5xl font-display font-bold ">{tienda.store}</h1>
+      <p class="text-xl font-medium mb-4 opacity-80">Ni Tigres, ni Rayados tienen estas piernas.</p>
     </div>
   </div>
 </div>
 
+<!-- <div class="tabs justify-center tabs-boxed">
+  <a class="tab tab-lg tab-lifted tab-active">Menú</a> 
+  <a class="tab tab-lg tab-lifted ">Contacto</a> 
+  <a class="tab tab-lg tab-lifted">Info</a>
+</div> -->
 
-
-<div class="  relative break-normal sticky top-0 z-10  bg-base-100/95  border-b-[0.5px] border-base-300">
-  
-  <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  scroll-smooth">
- 
-    {#each tienda.groups as link, index} 
-      <li use:useScrollChild={active === index ? { x: true } : false} >
-        <a  href="#{link.button}" class:btn-primary="{active === index}" class="btn btn-sm  md:btn-lg mr-2">{link.button}</a>  
-      </li>
+<div class=" sticky top-0 z-20 bg-base-100 border-b-[0.5px]  border-base-300 " >
+  <div class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
+    {#each tienda.groups as link, index}  
+      <a use:useScrollChild={active === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{active === index}" class="btn font-display text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</a>
     {/each}
-
-  </ul>
-
-
+  </div>
 </div>
+
 
 <div class="  relative break-normal sticky top-0 z-10  bg-base-100/95  border-b-[0.5px] border-base-300">
   

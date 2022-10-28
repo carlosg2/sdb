@@ -1,83 +1,57 @@
 <script>
-  import Head from '$lib/components/head.svelte'
-  import PostCard from '$lib/components/post-card.svelte'
+  import Head from '@components/head.svelte'
+    import BadgeCheck from '@lib/icons/badge-check.svelte'
+  import { description, siteName } from '@lib/site-config'
 
-  import { groupBy,toArray } from 'lodash';
+  import { page } from '$app/stores';
 
-  export let data
-  let { posts } = data
+	/** @type {import('./$types').PageData} */
+	export let data;
 
-  export let scrollIndex = 0;
 </script>
 
-<Head title={'Sucursales'} />
+<Head title={`Club de Pollos`} />
 
-<div class="hero " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);">
-  <div class="hero-overlay bg-base-100 opacity-60"></div>
-  <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md pt-4 text-base-content">
-      <h1 class="mb-4 text-5xl font-display font-bold ">Sucursales</h1>
+
+<!-- <section class="hero h-[500px] " style="background-image: url(/assets/images/background.jpg);" >
+  <div class="hero-overlay bg-base-200 bg-opacity-40"></div>
+  <div class="hero-content text-center text-base-content">
+    <div class="max-w-2xl py-20"> 
+      <h1 class="mb-5 text-6xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>
       <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
     </div>
   </div>
-</div>
+</section> -->
 
-<div class="  relative break-normal sticky top-0 z-10  bg-base-100/95  border-b-[0.5px] border-base-300">
-  
-  <ul class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto px-4 py-3 md:py-4 no-scrollbar  ">
- 
-    {#each posts as post, index} 
-      {#if post.published}
-        <li>
-          <a href="#{post.title}" class:btn-primary="{scrollIndex === index}" class="btn btn-sm  md:btn-lg mr-2">{post.title}</a>  
-        </li>
-      {/if}
-      
-    {/each}
 
-  </ul>
+<section class="pt-24">
+  <div class="relative">
+      <!-- <div class="absolute inset-0 w-screen h-full pb-20 transform opacity-50">
+          <img alt="feature" src="https://cdn.devdojo.com/images/march2021/bg-gradient.png" class="absolute left-0 object-cover w-full h-full">
+      </div> -->
+      <div class="relative px-6 py-8 ml-auto mr-auto bg-top bg-cover sm:py-16 max-w-7xl md:px-24 lg:px-16 lg:py-20">
 
-</div>
+          <div class="relative grid gap-6 bg-top bg-cover sm:grid-cols-2 lg:grid-cols-4">
+              
+            {#each data.sucursales as sucursal}
 
-<main class="mx-auto max-w-screen-lg relative break-normal">
-
-  <div class="flex flex-col flex-grow"> 
-    
-    {#each posts as post}
-      
-    <div class="flex px-4 items-start border-[0.5px] border-base-300 bg-base-100 rounded-2xl select-none" >
+            <a href="{sucursal.id}/menu" class="flex flex-col items-start justify-between p-6 space-y-4 overflow-hidden transition duration-200 bg-base-100 bg-top bg-cover  shadow-xl rounded-2xl group hover:bg-base-300 hover:shadow-2xl">
+              <!-- <div class="flex items-center justify-center w-10 h-10 text-center bg-top bg-cover rounded-full bg-indigo-50">
+                  <p class="relative">
+                      <svg class="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
+                  </p>
+              </div> -->
+              <p  class="font-bold text-base-content">{sucursal.nombre}</p>
+              <p class="text-sm leading-5 base-content opacity-60">{sucursal.direccion} {sucursal.noexterior} {sucursal.nointerior} {sucursal.colonia}, {sucursal.ciudad}, {sucursal.estado} </p>
+            </a>
+              
+            {/each}
             
-      <div class=" w-full relative py-4">
-        
-        <div class="flex justify-between items-center ">
-          <div class="shrink tracking-wide font-semibold leading-5 text-base md:text-xl">
-             {post.title}
+            
+            
+             
           </div>
-        </div>
-        
-        <div class="font-semibold tracking-wide flex items-center space-x-1 opacity-80" >
-          $ {post.title}
-        </div>
-
-        <div class="text-base md:text-base line-clamp-2 opacity-60">
-          {post.title}
-        </div>
-
-        
-
       </div>
-
-      <div class="ml-4 shrink-0 py-4">
-        <!-- <div
-          class="rounded-lg w-20 h-20 md:w-36 md:h-28 bg-cover bg-center"  
-          style="background-image: url(assets/images/{post.title});"
-          alt="demo"
-        /> -->
-      </div>
-
-    </div>
-    
-    {/each}
   </div>
+</section>
 
-</main>

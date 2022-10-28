@@ -25,8 +25,14 @@
   </div>
 </div>
 
-<div class=" sticky top-0 z-20 bg-base-100 border-b-[0.5px] border-t-[0.5px] border-base-300 " >
-  <div class="flex max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
+<!-- <div class="tabs justify-center tabs-boxed">
+  <a class="tab tab-lg tab-lifted tab-active">Menú</a> 
+  <a class="tab tab-lg tab-lifted ">Contacto</a> 
+  <a class="tab tab-lg tab-lifted">Info</a>
+</div> -->
+
+<div class=" sticky top-0 z-20 bg-base-100 border-b-[0.5px]  border-base-300 " >
+  <div class="flex justify-center max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
     {#each tienda.groups as link, index}  
       <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{scrollIndex === index}" class="btn font-display text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</a>
     {/each}
