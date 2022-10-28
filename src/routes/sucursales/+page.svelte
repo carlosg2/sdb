@@ -2,6 +2,7 @@
   import Head from '@components/head.svelte'
     import BadgeCheck from '@lib/icons/badge-check.svelte'
   import { description, siteName } from '@lib/site-config'
+  import Map from '@lib/components/map.svelte'
 
   import { page } from '$app/stores';
 
@@ -13,15 +14,9 @@
 <Head title={`Club de Pollos`} />
 
 
-<!-- <section class="hero h-[500px] " style="background-image: url(/assets/images/background.jpg);" >
-  <div class="hero-overlay bg-base-200 bg-opacity-40"></div>
-  <div class="hero-content text-center text-base-content">
-    <div class="max-w-2xl py-20"> 
-      <h1 class="mb-5 text-6xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>
-      <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
-    </div>
-  </div>
-</section> -->
+<!-- <section class=" absolute sticky h-40 " style="background-image: url(/assets/images/background.jpg);" >
+  <Map></Map>
+</section>  -->
 
 
 <section class="pt-24">
@@ -29,9 +24,9 @@
       <!-- <div class="absolute inset-0 w-screen h-full pb-20 transform opacity-50">
           <img alt="feature" src="https://cdn.devdojo.com/images/march2021/bg-gradient.png" class="absolute left-0 object-cover w-full h-full">
       </div> -->
-      <div class="relative px-6 py-8 ml-auto mr-auto bg-top bg-cover sm:py-16 max-w-7xl md:px-24 lg:px-16 lg:py-20">
+      <div class="relative px-6 py-8 ml-auto mr-auto sm:py-16 max-w-7xl md:px-24 lg:px-16 lg:py-20">
 
-          <div class="relative grid gap-6 bg-top bg-cover sm:grid-cols-2 lg:grid-cols-4">
+          <div class="relative grid gap-3  sm:grid-cols-2 lg:grid-cols-4">
               
             {#each data.sucursales as sucursal}
 
@@ -42,7 +37,7 @@
                   </p>
               </div> -->
               <p  class="font-bold text-base-content">{sucursal.nombre}</p>
-              <p class="text-sm leading-5 base-content opacity-60">{sucursal.direccion} {sucursal.noexterior} {sucursal.nointerior} {sucursal.colonia}, {sucursal.ciudad}, {sucursal.estado} </p>
+              <p class="text-sm md:text-base line-clamp-2 tracking-wider leading-4 opacity-50">{sucursal.direccion} {sucursal.noexterior} {sucursal.nointerior} {sucursal.colonia}, {sucursal.ciudad}, {sucursal.estado} </p>
             </a>
               
             {/each}

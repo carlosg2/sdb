@@ -29,7 +29,7 @@ const config = {
               sans: ["Gilroy", ...defaultTheme.fontFamily.sans],
             },
             fontSize: {
-              'xxs': '0.5rem',
+              '3xs': '0.5rem',
               '2xs': '.75rem',
               // 'xs': '.875rem',
               // 'sm': '1rem',

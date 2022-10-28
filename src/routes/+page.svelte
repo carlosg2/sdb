@@ -13,12 +13,12 @@
 <Head title={`Club de Pollos`} />
 
 
-<section class="hero h-[460px] " style="background-image: url(/assets/images/background.jpg);" >
+<section class="hero h-[460px]" style="background-image: url(/assets/images/background.jpg);" >
   <!-- style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);" -->
-  <div class="hero-overlay bg-base-200 bg-opacity-40 hero "></div>
+  <div class="hero-overlay bg-base-200 bg-opacity-40 "></div>
   <div class="hero-content text-center text-base-content">
     <div class="max-w-2xl pt-20"> 
-      <h1 class="mb-5 text-6xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>
+      <h1 class="mb-5 text-5xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>
       <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
       <a href="/sucursales" class="btn btn-lg btn-primary">Menú</a>
      
@@ -28,11 +28,11 @@
 
 
 <!-- Section 2 -->
-<section class="w-full bg-base-200 mt-90]  ">
-  <div class="py-10 px-4 mx-auto max-w-7xl md:px-8">
+<section class="w-full">
+  <div class="py-16 px-4 mx-auto max-w-7xl md:px-8">
 
       <div class="flex flex-col items-center w-full overflow-hidden bg-primary text-primary-content rounded-2xl md:flex-row">
-          <div class="flex flex-col w-full p-10 mt-4 text-center md:w-1/2 md:mt-0">
+          <div class="flex flex-col w-full p-6 my-2  text-center md:w-1/2 md:mt-0">
               <p class="mb-4 text-lg font-semibold tracking-wider leading-none">DELICIOSO Y CRUJIENTE</p>
               <h2 class="max-w-md mx-auto mb-6 text-3xl md:text-4xl font-bold font-display md:leading-tight ">Pollo Frito Estilo Texas<br>Receta Original.</h2>
               <a hhref="/sucursales" class="btn btn-neutral w-auto mx-auto ">
@@ -40,7 +40,7 @@
                   <svg class="w-3 h-3 mt-0.5 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
               </a>
           </div>
-          <div class="w-full mt-7 md:w-1/2 md:mt-0">
+          <div class="w-full md:w-1/2 ">
               <img alt="img" src="assets/images/detijera.png" class="w-full">
           </div>
       </div>

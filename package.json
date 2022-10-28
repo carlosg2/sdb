@@ -19,6 +19,7 @@
     "cssnano": "5.1.13",
     "daisyui": "2.31.0",
     "lodash": "^4.17.21",
+    "maplibre-gl": "^2.4.0",
     "mdsvex": "0.10.6",
     "mdsvex-relative-images": "1.0.2",
     "medium-zoom": "^1.0.6",

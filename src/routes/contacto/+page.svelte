@@ -18,7 +18,7 @@
   <div class="hero-overlay bg-base-200 bg-opacity-40"></div>
   <div class="hero-content text-center text-base-content">
     <div class="max-w-2xl py-20"> 
-      <h1 class="mb-5 text-6xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>
+      <h1 class="mb-5 text-5xl md:text-7xl font-bold font-display ">Somos Pollos<br>No Gallinas</h1>
       <p class="text-xl font-medium mb-4">Ni Tigres, ni Rayados tienen estas piernas.</p>
       <!-- <button class="btn btn-primary">CTA</button> -->
      

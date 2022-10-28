@@ -15,15 +15,16 @@
     themeChange(false)
   })
 
-  $: url = String($page.url).split("#")[0];
+  $: active = String($page.url).split("#")[0];
 </script>
 
 
 
 <Nav sucursales="{data}"  />
 
-{#key {url} }
-<div in:fly={{ y: -15, duration:300, delay:300 }}
+{#key {active} }
+<div in:fly={{ y: -15, duration:200, delay:300 }}
+     
      >
 <slot  />
 </div>

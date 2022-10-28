@@ -1,11 +1,13 @@
 <script>
   import Head from '@components/head.svelte'
+  import { page } from '$app/stores'
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
   import useScrollChild from '@apsc/scroll-child-action';
 
 
   export let data
   $: tienda = data.tienda;
+  $: active = String($page.url).split("#")[0];
 
   export let scrollIndex = 0;
 
@@ -15,15 +17,37 @@
 <Head title={'Menú - Club de Pollos - ' + tienda.store} />
 
 
-<div class="hero " style="background-image: url(../assets/images/background.jpg);">
+<div  class="hero  bg-cover" style="background-image: url(../assets/images/background.jpg);">
   <div class="hero-overlay bg-base-100 opacity-60"></div>
   <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md pt-24 text-base-content">
-      <h1 class="mb-4 text-5xl font-display font-bold ">{tienda.store}</h1>
-      <p class="text-xl font-medium mb-4 opacity-80">Ni Tigres, ni Rayados tienen estas piernas.</p>
+    <div class="max-w-md pt-14 pb-6 text-base-content space-y-2">
+      <p class="text-xs font-bold text-primary  tracking-widest ">SUCURSAL</p>
+      <h1 class=" text-5xl font-display font-bold ">{tienda.store}</h1>
+      <p class="text-sm font-semibold pb-5 tracking-widest">{tienda.direccion}, {tienda.ciudad}</p>
+      <div class=" space-x-2">
+        <a class="btn btn-ghost border-base-content/20 btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z" clip-rule="evenodd" />
+          </svg>
+          
+          
+          
+          
+        </a>
+        <a class="btn btn-ghost border-base-content/20 btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clip-rule="evenodd" />
+          </svg>
+          
+          
+        </a>
+        
+      </div>
     </div>
   </div>
 </div>
+
+
 
 <!-- <div class="tabs justify-center tabs-boxed">
   <a class="tab tab-lg tab-lifted tab-active">Menú</a> 
@@ -32,7 +56,7 @@
 </div> -->
 
 <div class=" sticky top-0 z-20 bg-base-100 border-b-[0.5px]  border-base-300 " >
-  <div class="flex justify-center max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
+  <div class="flex  max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
     {#each tienda.groups as link, index}  
       <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{scrollIndex === index}" class="btn font-display text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</a>
     {/each}
@@ -59,7 +83,7 @@
   
           <div class="text-base-content flex px-4 items-start  border-[0.5px] border-base-300/70 bg-base-100 rounded-2xl select-none" >
             
-            <div class=" w-full relative py-4">
+            <div class=" w-full relative space-y-1 py-4">
               
               <div class="flex justify-between items-center ">
                 <div class="shrink text-base-content tracking-wide font-bold font-display text-lg leading-5 pb-1 capitalize">
@@ -67,11 +91,11 @@
                 </div>
               </div>
 
-              <div class="text-sm md:text-base line-clamp-2 tracking-wide leading-4 opacity-50">
+              <div class="text-sm md:text-base line-clamp-2 tracking-wider leading-4 opacity-50">
                 {item.description}
               </div>
   
-              <div class="text-base-content font-semibold tracking-wide flex items-center space-x-1 tabular-nums opacity-80" >
+              <div class="text-sm md:text-base text-base-content tracking-wider font-semibold flex items-center  tabular-nums opacity-50" >
                 ${item.price}
               </div>
               
