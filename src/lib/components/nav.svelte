@@ -103,7 +103,7 @@
   </div>
 
   <div class="navbar-center">
-    <a class="pr-2" href="/"><Logo /></a>
+    <a data-sveltekit-prefetch class="pr-2" href="/"><Logo /></a>
   </div>
 
   <div class="navbar-end">
