@@ -1,5 +1,7 @@
 <script>
   import Footer from '@components/footer.svelte'
+  import { navigating } from '$app/stores';
+  import preloadingindicator from '@components/preloadingindicator.svelte'
   import { page } from '$app/stores'
   import { fly } from 'svelte/transition'
   import Nav from '@components/nav.svelte'
@@ -7,6 +9,7 @@
   import { themeChange } from 'theme-change'
   import '../app.css'
   import '../prism.css'
+    import Preloadingindicator from '@lib/components/preloadingindicator.svelte'
 
   export let data;
 
@@ -17,6 +20,7 @@
 
   $: active = String($page.url).split("#")[0];
 </script>
+
 
 
 
@@ -35,4 +39,8 @@
 
 <!-- <p class="w-full text-sm opacity-30 text-center p-4">{data.ip} / {data.city} / {data.country} / {data.region} / {data.latitude},{data.longitude} /{data.timezone}</p> -->
 
+
+{#if $navigating}
+ <Preloadingindicator></Preloadingindicator>  
+{/if}
  

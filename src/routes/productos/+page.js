@@ -19,7 +19,7 @@
 export const load = async ({ fetch }) => {
 
   const fetchProducts = async () => {   
-      const productRes = await fetch('https://www.extrapos.mx/pollos/GetProductosMenu.php?cliente_id=0&tipoVentaID=1')
+      const productRes = await fetch('https://pollos.extrapos.mx/pollos/GetProductosMenu.php?cliente_id=0&tipoVentaID=1')
       const productData = await productRes.json()
       return productData.Productos
   }

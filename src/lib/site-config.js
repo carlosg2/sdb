@@ -12,6 +12,7 @@ export const pages = [
   { title: 'Nuestra Historia', path: '/acerca' },
   { title: 'Sucursales', path: '/sucursales' },
   { title: 'Contacto', path: '/contacto' },
+  { title: 'Iniciar Sesion', path: '/login' },
 ]
 
 export const socialLinks = [

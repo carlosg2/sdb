@@ -30,7 +30,7 @@
 
 <div class="hero " style="background-image: url(https://www.clubdepollos.com/assets/images/cesped-1920x1440.jpg);">
   <div class="hero-overlay bg-base-100 opacity-80"></div>
-  <div class="hero-content text-center text-neutral-content">
+  <div class="hero-content pt-16 text-center text-neutral-content">
     <div class="max-w-md pt-4 text-base-content">
       <h1 class="mb-4 text-5xl font-bold ">Menú</h1>
       <p class="text-xl font-medium mb-4 opacity-80">Ni Tigres, ni Rayados tienen estas piernas.</p>
