@@ -35,6 +35,7 @@
     <Map></Map>
   </section> 
   
+
   <!-- {data.latitude},{data.longitude} -->
   
   <section class="h-2/3 overflow-y-scroll">
@@ -44,11 +45,14 @@
             <img alt="feature" src="https://cdn.devdojo.com/images/march2021/bg-gradient.png" class="absolute left-0 object-cover w-full h-full">
         </div> -->
 
-        <div class="relative px-6 py-8 ml-auto mr-auto sm:py-16 max-w-7xl md:px-24 lg:px-16 lg:py-20">
+        <div class="relative mx-auto max-w-7xl px-6 lg:px-16 lg:py-18">
   
           {#each groups as estado, index }
-  
-            <p class="">{estado.category} </p>
+          <div class="pt-8">
+
+            <div class="shrink text-2xl text-primary md:text-3xl tracking-wide font-bold py-4 px-6 font-display">
+              {estado.category}
+            </div>
   
             <div class="relative grid gap-3  grid-cols-1 lg:grid-cols-4">
   
@@ -66,6 +70,7 @@
                 </a>
               {/each}
             </div>
+          </div>
           {/each}
           
   

@@ -29,7 +29,7 @@
         zoom: initialState.zoom, attributionControl: false
       });
       
-      //map.addControl(new NavigationControl(), 'bottom-right');
+      map.addControl(new NavigationControl(), 'bottom-right');
       //map.addControl(new AttributionControl({compact: true}))
 
       map.easeTo({ padding: {top: 70}})
