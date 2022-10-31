@@ -24,7 +24,7 @@
     
       map = new Map({
         container: mapContainer,
-        style: `https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json`,
+        style: `https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json`, // `https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json`,
         center: [initialState.lng, initialState.lat],
         zoom: initialState.zoom, attributionControl: false
       });
