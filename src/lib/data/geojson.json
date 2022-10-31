@@ -6,8 +6,8 @@
           "properties":{
               "storeid": 1,
               "iconSize":[
-                60,
-                60
+                40,
+                40
               ]
           },
           "geometry":{
@@ -23,8 +23,8 @@
           "properties":{
               "storeid":2,
               "iconSize":[
-                50,
-                50
+                40,
+                40
               ]
           },
           "geometry":{
@@ -72,7 +72,7 @@
         {
           "type":"Feature",
           "properties":{
-              "storeid":5,
+              "storeid":7,
               "iconSize":[
                 40,
                 40
@@ -89,7 +89,7 @@
         {
           "type":"Feature",
           "properties":{
-              "storeid":6,
+              "storeid":11,
               "iconSize":[
                 40,
                 40
@@ -107,7 +107,7 @@
         {
           "type":"Feature",
           "properties":{
-              "storeid":7,
+              "storeid":12,
               "iconSize":[
                 40,
                 40
@@ -121,6 +121,109 @@
                 
               ]
           }
-        }
+        },
+        {
+          "type":"Feature",
+          "properties":{
+              "storeid":14,
+              "iconSize":[
+                40,
+                40
+              ]
+          },
+          "geometry":{
+              "type":"Point",
+              "coordinates":[
+                -100.564724,
+                25.8037089
+              ]
+          }
+        },
+        {
+          "type":"Feature",
+          "properties":{
+              "storeid":17,
+              "iconSize":[
+                40,
+                40
+              ]
+          },
+          "geometry":{
+              "type":"Point",
+              "coordinates":[
+                -100.5856397,
+                25.7958885
+              ]
+          }
+        },
+        {
+          "type":"Feature",
+          "properties":{
+              "storeid":21,
+              "iconSize":[
+                40,
+                40
+              ]
+          },
+          "geometry":{
+              "type":"Point",
+              "coordinates":[
+                -100.5856397,
+                25.7958885
+              ]
+          }
+        },
+        {
+          "type":"Feature",
+          "properties":{
+              "storeid":23,
+              "iconSize":[
+                40,
+                40
+              ]
+          },
+          "geometry":{
+              "type":"Point",
+              "coordinates":[
+                -100.2616638,
+                25.7120742
+              ]
+          }
+        },
+        {
+          "type":"Feature",
+          "properties":{
+              "storeid":24,
+              "iconSize":[
+                40,
+                40
+              ]
+          },
+          "geometry":{
+              "type":"Point",
+              "coordinates":[
+                -100.4901615,
+                25.7927748
+              ]
+          }
+        },
+        {
+            "type":"Feature",
+            "properties":{
+                "storeid":25,
+                "iconSize":[
+                  40,
+                  40
+                ]
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    -100.2506052,
+                    25.7544292
+                ]
+            }
+          }
+        
     ]
   }
