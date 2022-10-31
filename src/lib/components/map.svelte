@@ -47,14 +47,14 @@
         el.style.height = marker.properties.iconSize[1] + 'px';
         
         el.addEventListener('click', function () {
-        window.alert(marker.properties.message);
+          window.alert(marker.properties.storeid);
         });
  
-        // add marker to map new Marker(el)
-        new Marker({color: "#FF0000"})
+        // add marker to map /  ej.new Marker(el, {offset:[20, -10]})
+        new Marker({color:'#ff0000'})
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
-        });
+        })
 
 
         
