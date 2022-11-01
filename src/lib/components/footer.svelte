@@ -213,7 +213,7 @@
       <hr class="my-6 sm:mx-auto border-base-300 lg:my-8">
       <div class="text-center">
           <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold ">
-            <Logo/>  
+            <Logo/>
           </a>
           <span class="block text-sm text-center text-base-content opacity-60">©2022 {siteName}. Derechos Reservados.</span>
 
