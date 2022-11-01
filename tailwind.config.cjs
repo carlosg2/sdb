@@ -1,7 +1,7 @@
 const typography = require('@tailwindcss/typography');
 // const forms = require('@tailwindcss/forms')({strategy: "class"});
 const defaultTheme = require("tailwindcss/defaultTheme");
-// const aspect = require('@tailwindcss/aspect-ratio');
+//const aspect = require('@tailwindcss/aspect-ratio');
 const ui = require("daisyui");
 
 
@@ -65,32 +65,32 @@ const config = {
   daisyui: {
     themes: [
       {
-        light: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+        // light: {
+        //   ...require("daisyui/src/colors/themes")["[data-theme=light]"],
 
-          primary: "#ff0000",
-          "primary-content": "#ffffff",
+        //   primary: "#ff0000",
+        //   "primary-content": "#ffffff",
 
-          neutral: "#F3F3F3",
-          "neutral-focus": "#E3E5E8",
-          "neutral-content": "#2A2D32",
+        //   neutral: "#F3F3F3",
+        //   "neutral-focus": "#E3E5E8",
+        //   "neutral-content": "#2A2D32",
 
-          "base-100": "#ffffff",
-          "base-200": "#F3F3F3",
-          "base-300": "#E3E5E8",
-          "base-content": "#1f2937",
+        //   "base-100": "#ffffff",
+        //   "base-200": "#F3F3F3",
+        //   "base-300": "#E3E5E8",
+        //   "base-content": "#1f2937",
           
-          "--btn-text-case": "normal-case",
-          "--rounded-box": "1rem", // border radius rounded-box utility class, used in card and other large boxes
-          "--rounded-btn": "1.5rem", // border radius rounded-btn utility class, used in buttons and similar element
-          "--rounded-badge": "1.2rem", // border radius rounded-badge utility class, used in badges and similar
-          "--animation-btn": "0.25s", // duration of animation when you click on button
-          "--animation-input": "0.2s", // duration of animation for inputs like checkbox, toggle, radio, etc
-          "--btn-focus-scale": "1.066", // scale transform of button when you focus on it
-          "--border-btn": "1px", // border width of buttons
-          "--tab-border": "1px", // border width of tabs
-          "--tab-radius": "0.5rem", // border radius of tabs
-        },
+        //   "--btn-text-case": "normal-case",
+        //   "--rounded-box": "1rem", // border radius rounded-box utility class, used in card and other large boxes
+        //   "--rounded-btn": "1.5rem", // border radius rounded-btn utility class, used in buttons and similar element
+        //   "--rounded-badge": "1.2rem", // border radius rounded-badge utility class, used in badges and similar
+        //   "--animation-btn": "0.25s", // duration of animation when you click on button
+        //   "--animation-input": "0.2s", // duration of animation for inputs like checkbox, toggle, radio, etc
+        //   "--btn-focus-scale": "1.066", // scale transform of button when you focus on it
+        //   "--border-btn": "1px", // border width of buttons
+        //   "--tab-border": "1px", // border width of tabs
+        //   "--tab-radius": "0.5rem", // border radius of tabs
+        // },
         dark: {
           ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
           
@@ -124,9 +124,9 @@ const config = {
           "--tab-radius": "0.5rem", // border radius of tabs
         }, 
 
-      },
+      }
 
-      "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"
+      //"cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"
 
 
     ],

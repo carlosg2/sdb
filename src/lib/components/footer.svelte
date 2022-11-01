@@ -205,7 +205,7 @@
                       <a href="#" class="hover:underline">Ubicaciones</a>
                   </li>
 
-                  <ThemeSelect/> 
+                  <!-- <ThemeSelect/>  -->
               </ul>
           </div>
           

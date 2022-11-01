@@ -9,6 +9,7 @@
   import '../app.css'
   import '../prism.css'
   import Preloadingindicator from '@components/preloadingindicator.svelte'
+  import PageTransitions from '@components/PageTransitions.svelte'
 
   export let data;
 
@@ -21,11 +22,15 @@
 
 <Nav sucursales="{data}"  />
 
-{#key {active} }
-  <div in:fly={{ y: -15, duration:400, delay:200 }}>
+<PageTransitions refresh={active}>
+  <slot />
+</PageTransitions>
+
+<!-- {#key {active} }
+  <div >
     <slot/>
   </div>
-{/key}
+{/key} -->
 
 <Footer />
 

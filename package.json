@@ -14,6 +14,7 @@
     "@apsc/scroll-child-action": "^0.0.3",
     "@sveltejs/adapter-vercel": "1.0.0-next.77",
     "@sveltejs/kit": "next",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "0.5.7",
     "autoprefixer": "10.4.12",
     "cssnano": "5.1.13",
