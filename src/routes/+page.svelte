@@ -46,12 +46,12 @@
       </div>
 
       <div class="flex flex-col mt-10 md:flex-row md:mt-8 md:space-x-8" >
-          <div class="flex flex-col items-center justify-center flex-1 overflow-hidden text-center bg-base-100 rounded-2xl " data-theme="light">
+          <div class="flex flex-col items-center justify-center flex-1 overflow-hidden text-center bg-white rounded-2xl " >
               <div class="flex flex-col px-10 pb-5 space-y-6 pt-14 md:px-8">
-                  <h3 class="text-3xl md:text-4xl font-bold font-display md:leading-tight">
+                  <h3 class="text-3xl md:text-4xl font-bold text-base-200 font-display md:leading-tight">
                       Combo de Remate
                   </h3>
-                  <p class="text-xl font-base text-base-content">Deliciosos y crujiente pollo frito estilo Texas.</p>
+                  <p class="text-xl font-base text-base-300">Deliciosos y crujiente pollo frito estilo Texas.</p>
                   <a href="/sucursales" class="btn btn-primary w-auto mx-auto ">
                       <span>Explorar el Menú</span>
                       <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>

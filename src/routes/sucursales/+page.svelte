@@ -32,8 +32,10 @@
 <main class="h-screen">
 
   <section class=" h-1/3 border-b-[0.5px] shadow-lg shadow-black  border-base-300/70"  >
-    <Map></Map>
+    <Map let:selectedId ></Map>
   </section> 
+  
+  <!-- <p>{selectedId}</p> -->
   
 
   <!-- {data.latitude},{data.longitude} -->

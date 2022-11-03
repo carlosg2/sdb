@@ -1,8 +1,11 @@
 <script>
     import { onMount, onDestroy } from 'svelte'
     import { Map, NavigationControl, Marker, AttributionControl } from 'maplibre-gl';
+    import { goto } from '$app/navigation';
     import 'maplibre-gl/dist/maplibre-gl.css';
     import geoj from '$lib/data/geojson.json';
+
+
 
   
     let map;
@@ -10,6 +13,7 @@
 
     let geojson = geoj;
 
+    let selectedId = -1;
 
   
     onMount(() => {
@@ -38,24 +42,48 @@
       //   .setLngLat([-100.2893739,25.7043397])  
       //   .addTo(map); 
 
-        geojson.features.forEach(function (marker) {
+
+      class ClickableMarker extends Marker {
+          // new method onClick, sets _handleClick to a function you pass in
+          onClick(handleClick) {
+            this._handleClick = handleClick;
+            return this;
+          }
+
+          // the existing _onMapClick was there to trigger a popup
+          // but we are hijacking it to run a function we define
+          _onMapClick(e) {
+            const targetElement = e.originalEvent.target;
+            const element = this._element;
+
+            if (this._handleClick && (targetElement === element || element.contains((targetElement)))) {
+              this._handleClick();
+            }
+          }
+        };
+
+
+        geojson.features.forEach(function (marker)
+        {
         // create a DOM element for the marker
         var el = document.createElement('div');
-        el.className = 'marker';
+        el.className = 'marker hover:scale-150';
         el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
         el.style.width = marker.properties.iconSize[0] + 'px';
         el.style.height = marker.properties.iconSize[1] + 'px';
         
         el.addEventListener('click', function () {
-          window.alert(marker.properties.storeid);
+          window.alert(selected = marker.properties.storeid);
         });
  
         // add marker to map /  ej.new Marker(el, {offset:[20, -10]})
-        new Marker({color:'#ff0000'})
+        new ClickableMarker({color:'#ff0000'})
         .setLngLat(marker.geometry.coordinates)
+        .onClick(() => { goto(`/` + marker.properties.storeid + '/menu') })
         .addTo(map);
         })
 
+ 
 
         
   

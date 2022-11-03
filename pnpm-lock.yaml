@@ -5,6 +5,7 @@ specifiers:
   '@sveltejs/adapter-vercel': 1.0.0-next.77
   '@sveltejs/kit': next
   '@tailwindcss/aspect-ratio': ^0.4.2
+  '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': 0.5.7
   autoprefixer: 10.4.12
   cssnano: 5.1.13
@@ -32,8 +33,9 @@ specifiers:
 devDependencies:
   '@apsc/scroll-child-action': 0.0.3_svelte@3.50.1
   '@sveltejs/adapter-vercel': 1.0.0-next.77
-  '@sveltejs/kit': 1.0.0-next.531_svelte@3.50.1+vite@3.1.6
+  '@sveltejs/kit': 1.0.0-next.532_svelte@3.50.1+vite@3.1.6
   '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.1
+  '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.1
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   autoprefixer: 10.4.12_postcss@8.4.17
   cssnano: 5.1.13_postcss@8.4.17
@@ -188,8 +190,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.531_svelte@3.50.1+vite@3.1.6:
-    resolution: {integrity: sha512-8uBJF5BweIFoyw+Kqv0jsDSfndNw2mTF222qi8rDuptOy7gjoWXYFy2F0kd8orNeZUnjFrHE+g/qDNHq7zzEJg==}
+  /@sveltejs/kit/1.0.0-next.532_svelte@3.50.1+vite@3.1.6:
+    resolution: {integrity: sha512-g+t+dncoz/DBc1mfwSfBaIBqE5pl0caMUy7yZzjsnyw0WG3AevC04d2KfTOgtOMgXVDnSVqZxlTR+MM5tnKeyw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -200,7 +202,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.50.1+vite@3.1.6
       '@types/cookie': 0.5.1
       cookie: 0.5.0
-      devalue: 4.0.1
+      devalue: 4.2.0
       kleur: 4.1.5
       magic-string: 0.26.7
       mime: 3.0.0
@@ -243,6 +245,15 @@ packages:
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
+      tailwindcss: 3.2.1_postcss@8.4.17
+    dev: true
+
+  /@tailwindcss/forms/0.5.3_tailwindcss@3.2.1:
+    resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
       tailwindcss: 3.2.1_postcss@8.4.17
     dev: true
 
@@ -791,8 +802,8 @@ packages:
       minimist: 1.2.6
     dev: true
 
-  /devalue/4.0.1:
-    resolution: {integrity: sha512-Oksbel8g2rv5ivcCyImF1RXEU2FcS1OtCwVs4tJCCeVws/Dp9EE15fUbEsNr/xLD3ZxsQURBCDf56Lk1CgwCpg==}
+  /devalue/4.2.0:
+    resolution: {integrity: sha512-mbjoAaCL2qogBKgeFxFPOXAUsZchircF+B/79LD4sHH0+NHfYm8gZpQrskKDn5gENGt35+5OI1GUF7hLVnkPDw==}
     dev: true
 
   /didyoumean/1.2.2:
@@ -1795,6 +1806,11 @@ packages:
   /min-indent/1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
+    dev: true
+
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
     dev: true
 
   /minimatch/3.1.2:

@@ -1,5 +1,5 @@
 const typography = require('@tailwindcss/typography');
-// const forms = require('@tailwindcss/forms')({strategy: "class"});
+const forms = require('@tailwindcss/forms')({strategy: "class"});
 const defaultTheme = require("tailwindcss/defaultTheme");
 //const aspect = require('@tailwindcss/aspect-ratio');
 const ui = require("daisyui");
