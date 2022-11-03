@@ -34,7 +34,7 @@
   </div>
 {/key} -->
 
-<!-- <Footer /> -->
+<Footer />
 
 <!-- <p class="w-full text-sm opacity-30 text-center p-4">{data.ip} / {data.city} / {data.country} / {data.region} / {data.latitude},{data.longitude} /{data.timezone}</p> -->
 
