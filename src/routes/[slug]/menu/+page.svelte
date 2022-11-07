@@ -83,7 +83,7 @@
       
       
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 py-4"> 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 py-4"> 
       
         {#each item.productos as item}
   
