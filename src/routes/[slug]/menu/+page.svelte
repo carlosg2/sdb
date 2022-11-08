@@ -3,6 +3,8 @@
   import { page } from '$app/stores'
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
   import useScrollChild from '@apsc/scroll-child-action';
+  import { goto } from '$app/navigation';
+  import slugify from '@sindresorhus/slugify';
 
 
   export let data
@@ -58,10 +60,15 @@
   <a class="tab tab-lg tab-lifted">Info</a>
 </div> -->
 
-<div class=" sticky top-0 z-20 bg-base-100/50 backdrop-blur-md saturate-150 border-b-[0.5px]  border-base-300 " >
+<div class=" sticky top-0 z-20 bg-base-100/50 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-300 " >
   <div class="flex  max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
     {#each tienda.groups as link, index}  
-      <a use:useScrollChild={scrollIndex === index ? { x: true } : false} href="#{link.title}" class:btn-primary="{scrollIndex === index}" class:btn-ghost="{scrollIndex != index}" class="btn font-display border-0 text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</a>
+      <a 
+      use:useScrollChild={scrollIndex === index ? { x: true } : false}
+      on:click|preventDefault={() => goto('#'+ slugify(link.title), { replaceState:false})}
+      class:btn-primary="{scrollIndex === index}"
+      class:btn-ghost="{scrollIndex != index}"
+      class="btn font-display border-0 text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</a>
     {/each}
   </div>
 </div>
@@ -72,7 +79,7 @@
 
   {#each tienda.groups as item}
 
-    <div id="{item.title}"  class="scroll-mt-20 z-10 px-4 w-full items-start py-4 pt-12 select-none" >
+    <div id="{slugify(item.title)}" class="scroll-mt-20 z-10 px-4 w-full items-start py-4 pt-12 select-none" >
       
       <div class="shrink text-3xl text-center md:text-3xl tracking-wide font-bold pb-0 px-4 font-display">
         {item.title}

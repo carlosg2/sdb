@@ -39,5 +39,8 @@
     "theme-change": "2.2.0",
     "truncate-html": "1.0.4",
     "vite": "3.1.6"
+  },
+  "dependencies": {
+    "@sindresorhus/slugify": "^2.1.1"
   }
 }
