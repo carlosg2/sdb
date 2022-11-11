@@ -132,7 +132,7 @@
 
 {#if selected}
 
-    <div class="h-full w-full bg-base-200  justify-center place-items-center h-full flex fixed top-0 left-0 z-30" transition:fade={{duration:50}}></div>
+    <div class="h-full w-full bg-base-100/80 backdrop-blur-xl   justify-center place-items-center h-full flex fixed top-0 left-0 z-30" transition:fade={{duration:50}}></div>
 
 	<!-- <div class="h-full w-full flex lex fixed top-0 left-0 overflow-y-auto justify-center items-center" on:click={() => selected = null}>
 		<div class=" h-full flex flex-col xl:flex-row w-full" >
@@ -146,29 +146,29 @@
 	  </div> -->
 
 	  <section class="h-full w-full flex fixed top-0 left-0 overflow-y-auto justify-center z-30" >
-        <div class="container mx-auto px-4 py-20 md:px-12">
+        <div class="container mx-auto p-4 md:py-20 md:px-12">
           <div class="flex flex-wrap -mx-4 mb-24">
-            <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+            <div class="w-full md:w-1/2 px-4 mb-8 md:mb-8">
               <div class="relative" >
-                <img class=" w-full rounded-box"
-					src={get_src(selected)} alt=""
-					transition:expand={{id:selected}}
+                <img class=" w-full rounded-box z-10" 
+					src={selected.image_url} alt=""
+					transition:expand={{id:selected.id}}
 					on:click={() => selected = null}
 					>
               </div>
             </div>
     
-			<div class="w-full md:w-1/2 px-4" in:fly={{y:10, duration:350, delay:200  }} out:fade={{ duration:50 }}>
+			<div class="w-full md:w-1/2 px-4 z-50" in:fly={{y:10, duration:350, delay:100  }} out:fade={{ duration:50 }}>
               <div class="lg:pl-10">
                 <div class="mb-10 pb-10 border-b border-base-300 border-b-[0.5px]">
-                  <span class="text-base-content" >Categoría</span>
-                  <h2 class="mt-2 mb-4 max-w-xl text-3xl md:text-4xl font-bold font-heading" >Combo Somos Pollos</h2>
+                  <!-- <span class="text-base-content" >Categoría</span> -->
+                  <h2 class="mt-2 mb-0 max-w-xl text-3xl md:text-4xl font-bold font-heading" >{selected.title}</h2>
                   
                   <p class="inline-block mb-4 text-2xl font-bold font-heading text-primary">
-                    <span>$260</span>
+                    <span>${selected.price}</span>
 
                   </p>
-                  <p class="max-w-md text-base-content" >Maecenas commodo libero ut molestie dictum. Morbi placerat eros id porttitor sagittis.</p>
+                  <p class="max-w-md text-base-content" >{selected.description}</p>
                 </div>
 
 				<div class="my-4">
@@ -268,7 +268,8 @@
 		  
 				  </div>
 
-                <!-- <div class="flex mb-12">
+                
+                  <!-- <div class="flex mb-12">
                   <div class="mr-6">
                     <span class="block mb-4 font-bold font-heading text-base-content opacity-60 uppercase" >Cantidad</span>
                     <div class="inline-flex items-center px-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md">
@@ -381,16 +382,63 @@
   </div>
 
   <div class="w-full flex justify-center items-center ">
-    <div class="p-4 md:p-12 container mx-auto h-full grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  overflow-y-auto">
-        {#each ["areachica", "tirolibre", "fueradelugar", "penalty", "balondeoro", "contragolpe", "dechilena", "depalomita", "juezdelinea", "detaconcito", "detijera","goleador"] as id}
-            <img
-                data-id={id}
-                on:click={() => selected = id}
-                class:opacity-0="{selected === id}"
-                class="rounded-box"
-                alt="a thumbnail"
-                src="/assets/images/{id}.png"
-            >
+    <div class="p-4 md:p-12 container mx-auto h-full grid
+                gap-3 lg:gap-6 xl:gap-8 
+                grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-y-auto">
+        {#each tienda.groups as group}
+            {#each group.productos as item }
+                {#if item.image_url}
+                    
+                <div on:click={() => selected = item}
+                    class="text-base-content flex px-4 items-start  border-[0.5px] border-base-300/70 bg-base-100 rounded-2xl select-none" >
+            
+                    <div class=" w-full relative space-y-1 py-4">
+                      
+                      <div class="flex justify-between items-center ">
+                        <div class="shrink text-base-content tracking-wide font-bold font-display text-lg leading-5 pb-1 capitalize">
+                          {item.title}
+                        </div>
+                      </div>
+        
+                      <div class="text-sm md:text-base line-clamp-2 tracking-wider leading-4 opacity-50">
+                        {item.description}
+                      </div>
+          
+                      <div class="text-sm md:text-base text-base-content tracking-wider font-semibold flex items-center  tabular-nums opacity-50" >
+                        ${item.price}
+                      </div>
+                      
+                      
+          
+                    </div>
+        
+                    {#if item.image_url}
+        
+                      <div class="ml-4 shrink-0  py-4">
+                        <img data-id={item.id}
+                          class="rounded-md w-20 h-20 md:h-28 md:w-28"  
+                          src="{item.image_url}"
+                          alt="demo"
+                        />
+                      </div>
+                      
+                    {/if}
+          
+                    
+                </div>
+  
+                  
+                <!-- <img
+                    data-id={item.id}
+                    on:click={() => selected = item}
+                    
+                    class="rounded-box"
+                    alt="a thumbnail"
+                    src="{item.image_url}"
+                > -->
+            {/if}    
+        {/each}
+            
         {/each}
     </div>
 
