@@ -7,6 +7,7 @@
     import slugify from '@sindresorhus/slugify';
     import { fade, fly, scale, slide } from 'svelte/transition';
 	import * as eases from 'svelte/easing';
+    import { onMount } from 'svelte';
 	
 	let selected = null;
 	
@@ -19,9 +20,6 @@
   
     export let scrollIndex = 0;
 
-    
-	
-	
 	
 	const parse_brad = (str, rect) => {
 		const [x, y = x] = str.split(' ').map((str, i) => {
@@ -107,17 +105,24 @@
 		};
 	}
 
+  // scrolllock for content underneath productsdetail
+	function scrollLock(selected) {
+		if (mounted) {
+			const body = document.querySelector('body');
+			body.style.overflow = selected ? 'hidden' : 'auto';
+		}
+	}
 
+    let mounted = false;
+	
+    $: scrollLock(selected);
 
+	onMount(() => {
+		mounted = true;
+		scrollLock(selected);
+	});
 
-
-
-    
-
-
-  
-  
-  </script>
+</script>
   
   <Head title={'Menú Club de Pollos - ' + tienda.store} />
 
@@ -132,7 +137,7 @@
 
 {#if selected}
 
-    <div class="h-full w-full bg-base-100/80 backdrop-blur-xl   justify-center place-items-center h-full flex fixed top-0 left-0 z-30" transition:fade={{duration:50}}></div>
+    <div class="h-full w-full bg-base-200   justify-center place-items-center h-full flex fixed top-0 left-0 z-30" transition:fade={{duration:50}}></div>
 
 	<!-- <div class="h-full w-full flex lex fixed top-0 left-0 overflow-y-auto justify-center items-center" on:click={() => selected = null}>
 		<div class=" h-full flex flex-col xl:flex-row w-full" >
@@ -146,23 +151,23 @@
 	  </div> -->
 
 	  <section class="h-full w-full flex fixed top-0 left-0 overflow-y-auto justify-center z-30" >
+      
         <div class="container mx-auto p-4 md:py-20 md:px-12">
-          <div class="flex flex-wrap -mx-4 mb-24">
-            <div class="w-full md:w-1/2 px-4 mb-8 md:mb-8">
+          <div class="flex flex-wrap flex-row-reverse -mx-4 mb-24" >
+            <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
               <div class="relative" >
-                <img class=" w-full rounded-box z-10" 
-					src={selected.image_url} alt=""
-					transition:expand={{id:selected.id}}
-					on:click={() => selected = null}
-					>
+                <img class=" w-full rounded-box"
+                    src={selected.image_url} alt=""
+                    transition:expand={{id:selected.id}}
+                    on:click={() => selected = null}>
               </div>
             </div>
     
-			<div class="w-full md:w-1/2 px-4 z-50" in:fly={{y:10, duration:350, delay:100  }} out:fade={{ duration:50 }}>
+			      <div class="w-full md:w-1/2 px-4" in:fly={{y:10, duration:350, delay:100  }} out:fade={{ duration:30 }} >
               <div class="lg:pl-10">
-                <div class="mb-10 pb-10 border-b border-base-300 border-b-[0.5px]">
+                <div class="mb-10 pb-10 border-b border-base-300 border-b-[0.5px]" >
                   <!-- <span class="text-base-content" >Categoría</span> -->
-                  <h2 class="mt-2 mb-0 max-w-xl text-3xl md:text-4xl font-bold font-heading" >{selected.title}</h2>
+                  <h2 class="mt-2 mb-4 max-w-xl text-3xl md:text-4xl font-bold font-display" >{selected.title}</h2>
                   
                   <p class="inline-block mb-4 text-2xl font-bold font-heading text-primary">
                     <span>${selected.price}</span>
@@ -171,7 +176,7 @@
                   <p class="max-w-md text-base-content" >{selected.description}</p>
                 </div>
 
-				<div class="my-4">
+				      <div class="my-4">
 
 					
 					<div class="mt-10">
@@ -257,14 +262,16 @@
 							</button>
 						  </div>
 		  
-					  <label for="my-modal-2" class="btn btn-lg btn-primary " on:click={() => selected = null}>Agregar
+					  <div for="my-modal-2" class="btn btn-lg btn-primary " on:click={() => selected = null}>Agregar
 		  
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 ml-2 stroke-current">
 						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 						</svg>
 		  
-					  </label>
+                    </div>
 					</div>
+
+                    
 		  
 				  </div>
 
@@ -382,6 +389,11 @@
   </div>
 
   <div class="w-full flex justify-center items-center ">
+
+    <!-- p-4 md:p-12 container mx-auto h-full grid
+    gap-3 lg:gap-6 xl:gap-8 
+    grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-y-auto (abajo) -->
+
     <div class="p-4 md:p-12 container mx-auto h-full grid
                 gap-3 lg:gap-6 xl:gap-8 
                 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-y-auto">
@@ -390,7 +402,7 @@
                 {#if item.image_url}
                     
                 <div on:click={() => selected = item}
-                    class="text-base-content flex px-4 items-start  border-[0.5px] border-base-300/70 bg-base-100 rounded-2xl select-none" >
+                    class="text-base-content flex px-4 items-start  border-[0.5px] border-base-300 bg-base-100 rounded-box select-none" >
             
                     <div class=" w-full relative space-y-1 py-4">
                       
