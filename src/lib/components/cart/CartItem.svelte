@@ -56,9 +56,9 @@
 	</div>
 </div> -->
 
-<!-- in:fade={{easing: expoOut}} out:slide={{easing: expoOut}} -->
+<!--  -->
 
-    <li class="py-6 flex font-heading" >
+    <li class="py-6 flex font-heading" in:fade={{easing: expoOut}} out:slide={{easing: expoOut}} >
         <div class="indicator  flex-shrink-0 w-16 h-16">
             <div class="indicator-item  badge shadow badge-md badge-primary h-7 text-lg  font-bold">{quantity}</div>
             <img src="{item.image_url}" class="rounded-lg shadow w-full h-full object-center object-cover" >
