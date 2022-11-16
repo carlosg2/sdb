@@ -556,7 +556,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 		</dl> -->
 	</div>
 
-</div> 
+</div>
 
  
 <style>
