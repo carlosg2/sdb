@@ -55,13 +55,13 @@
       
         {#if itemInCart}
             <!-- <img src="/images/day2/check.svg" alt="" /> -->
-            <!-- <span>Agregado</span> -->
+            <div class="btn">Agregado</div>
 
             
-            <div class="flex space-x-1">
+            <!-- <div class="flex space-x-1">
                 <button class="btn btn-circle btn-sm" on:click={dec}><span> - </span></button>
                 <button class="btn btn-circle btn-sm" on:click={inc} ><span> + </span></button>
-            </div>
+            </div> -->
 
         {:else}
         <button class=" btn" class:btn-primary={!itemInCart} on:click={addToCart}>
