@@ -1,6 +1,7 @@
 <script>
 	import { fade, fly, scale, slide } from 'svelte/transition';
     import cart from './cart';
+	import CartIcon from './CartIcon.svelte';
 	export let item;
 	export let quantity;
 
@@ -24,6 +25,8 @@
 	function dec() {
 		dispatch('update', quantity - 1);
 	}
+
+
 </script>
 
 <!-- <div class="item text-base-content">
@@ -53,45 +56,37 @@
 	</div>
 </div> -->
 
+<!-- in:fade={{easing: expoOut}} out:slide={{easing: expoOut}} -->
 
-
-    <li class="py-6 flex font-heading" in:fade={{easing: expoOut}} out:slide={{easing: expoOut}}>
+    <li class="py-6 flex font-heading" >
         <div class="indicator  flex-shrink-0 w-16 h-16">
             <div class="indicator-item  badge shadow badge-md badge-primary h-7 text-lg  font-bold">{quantity}</div>
-            <img src="{item.image_url}" class="rounded-lg shadow w-full h-full object-center object-cover">
+            <img src="{item.image_url}" class="rounded-lg shadow w-full h-full object-center object-cover" >
         </div>
 
         <div class="ml-4 flex-1 flex flex-col">
 
             <div class="flex justify-between font-medium">
-                <h3>
-                    <a href="#">
-                        {item.title}
-                    </a>
+                <h3 class="">
+					{item.title}
                 </h3>
-                <p class="ml-4  tabular-nums ">
+                <p class="ml-4 text-sm md:text-base text-base-content tracking-wider font-semibold  tabular-nums">
                     {format(item.price * quantity)}
                 </p>
             </div>
 
-            <div class="flex-1 mt-3  flex justify-between text-base">
-                <p class="">{item.description}</p>
+            <div class="flex-1 mt-2  flex justify-between text-base">
+                <p class="opacity-50">{item.description}</p>
 
                 <!-- <p class="">Qty 1</p> -->
-
                 <div class="flex space-x-1">
-                    <!-- <button class="btn btn-xs">Remove</button> -->
-                    <button class="btn btn-circle btn-sm" on:click={dec}
-					><span>
-                        -
-                    </span></button
-				>
-				<span class=" btn btn-circle btn-sm bg-base-100">{quantity}</span>
-				<button class="btn btn-circle btn-sm" on:click={inc}
-					><span>
-                        +
-                    </span></button
-				>
+                    <button class="btn btn-circle btn-sm" on:click={dec}>
+						<CartIcon type="minus" strokeColor="#fff" />
+                    </button>
+					<span class=" btn btn-circle btn-sm bg-base-100">{quantity}</span>
+					<button class="btn btn-circle btn-sm" on:click={inc}>
+						<CartIcon type="plus" strokeColor="#fff" />
+					</button>
                 </div>
             </div>
         </div>

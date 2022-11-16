@@ -38,7 +38,7 @@
     <div class=" w-full relative space-y-1 py-4">
       
       <div class="flex justify-between items-center ">
-        <div class="shrink text-base-content tracking-wide font-bold font-display text-lg leading-5 pb-1 capitalize">
+        <div class="shrink text-base-content tracking-wide font-bold font-display text-lg leading-5 pb-1 ">
           {item.title}
           
         </div>

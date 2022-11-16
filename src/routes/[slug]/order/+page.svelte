@@ -2,6 +2,7 @@
   import Head from '@components/head.svelte'
   import MenuItem from '@lib/components/cart/MenuItem.svelte';
   import CartItem from '@lib/components/cart/CartItem.svelte';
+  import CartIcon from '@lib/components/cart/CartIcon.svelte';
   import { page } from '$app/stores'
   import Scrolly from '@lib/components/helpers/Scrolly.svelte'
   import useScrollChild from '@apsc/scroll-child-action';
@@ -393,7 +394,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
   <a class="tab tab-lg tab-lifted">Info</a>
 </div> -->
 
-<div class=" sticky top-0 z-20 bg-base-100/50 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-300 " >
+<div class=" sticky top-0 z-20 bg-base-200/50 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-100 " >
   <div class="flex  max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
     {#each tienda.groups as link, index}  
       <a 
@@ -494,13 +495,18 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 	
   <div class="cart sticky">
 		
-    <h2>Carrito</h2>
+    <h2>Mi Pedido</h2>
 		
     {#if $cart.length === 0}
-			<p>Tu carrito esta vacio.</p>
+			<div class="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
+        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white">
+          <CartIcon type="cart" strokeColor="#000" />
+        </div>
+        <div class="mt-6 text-center text-lg ">Agrega productos para<br>comenzar tu pedido</div>
+      </div>
 		
     {:else}
-      <ul role="list" class="-my-6 divide-y divide-base-100">
+      <ul role="list" class="-my-6 divide-y divide-y-[0.5px] divide-base-100">
 				
         {#each $cart as cartItem, index (cartItem.id)}
 						<CartItem item={items.find((i) => i.id === cartItem.id)}
@@ -550,9 +556,9 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 		</dl> -->
 	</div>
 
-</div>
+</div> 
 
-
+ 
 <style>
 	.root {
 		min-height: 100%;

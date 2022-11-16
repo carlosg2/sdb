@@ -108,7 +108,7 @@ const config = {
           "neutral-content": "#D3D5DA",
 
           "base-200": "#000000",
-          "base-100": "#131416",
+          "base-100": "#111",
           "base-300": "#2A2D32",
           "base-content": "#ffffff",  
 
