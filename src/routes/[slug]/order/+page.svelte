@@ -502,7 +502,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
         <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white">
           <CartIcon type="cart" strokeColor="#000" />
         </div>
-        <div class="mt-6 text-center text-lg ">Agrega productos para<br>comenzar tu pedido</div>
+        <div class="mt-6 text-center text-lg ">Comienza tu pedido<br>agregando productos</div>
       </div>
 		
     {:else}
