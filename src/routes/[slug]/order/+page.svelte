@@ -485,7 +485,8 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 		<ul>
 			{#each items as item}
 				<li>
-					<MenuItem {item} />
+					<MenuItem {item} 
+          on:update={(e) => updateItem(index, e.detail)} />
 				</li>
 			{/each}
 		</ul>
@@ -510,7 +511,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 
 			</ul>
 
-      <div class="border-t border-base-100 py-6">
+      <div class="border-t border-base-100 py-6  tabular-nums ">
         <div class="flex justify-between text-base font-medium">
           <p>Subtotal</p>
           <p>${$totals.subtotal}</p>
@@ -530,7 +531,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
         </div>
   
         <div class="mt-6 ">
-          <a href="#_" class="btn btn-block btn-lg btn-primary">Checkout</a>
+          <a href="#_" class="btn btn-block btn-lg btn-primary">Realizar Pedido</a>
         </div>
   
       </div>

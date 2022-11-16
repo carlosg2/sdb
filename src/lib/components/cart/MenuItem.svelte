@@ -7,6 +7,29 @@
 	function addToCart() {
 		cart.add({ id: item.id, quantity: 1 });
 	}
+
+
+    import { createEventDispatcher } from 'svelte';
+    import { expoOut } from 'svelte/easing'
+	const dispatch = createEventDispatcher();
+
+	function format(num) {
+		return `$${num.toFixed(2)}`;
+	}
+
+	function inc() {
+		$cart[0].quantity++;
+	}
+
+	function dec() {
+		$cart[0].quantity--;
+	}
+
+
+
+
+
+
 </script>
 
 <div on:click={() => selected = item}
@@ -26,17 +49,26 @@
       </div>
 
       <div class="text-sm md:text-base text-base-content tracking-wider font-semibold flex items-center  tabular-nums opacity-50" >
-        ${item.price.toFixed(2)}
+        ${item.price.toFixed(0)}
       </div>
 
-      <button class=" btn" class:btn-primary={!itemInCart} on:click={addToCart}>
+      
         {#if itemInCart}
             <!-- <img src="/images/day2/check.svg" alt="" /> -->
-            <span>Agregado</span>
+            <!-- <span>Agregado</span> -->
+
+            
+            <div class="flex space-x-1">
+                <button class="btn btn-circle btn-sm" on:click={dec}><span> - </span></button>
+                <button class="btn btn-circle btn-sm" on:click={inc} ><span> + </span></button>
+            </div>
+
         {:else}
+        <button class=" btn" class:btn-primary={!itemInCart} on:click={addToCart}>
             Agregar
+        </button>
         {/if}
-    </button>
+
       
       
 
@@ -46,7 +78,7 @@
 
       <div class="ml-4 shrink-0  py-4">
         <img data-id={item.id}
-          class="rounded-md w-20 h-20 md:h-28 md:w-28"  
+          class="rounded-md w-20 h-20 md:h-28 md:w-28 object-center object-cover"  
           src="{item.image_url}"
           alt="demo"
         />

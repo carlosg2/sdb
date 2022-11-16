@@ -38,54 +38,54 @@ export const totals = derived(cart, ($cart) => {
 export const items 
 = [
 	{
-		title: 'COMBO SOMOSPOLLOS',
-		price: 349,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/173_producto_80.png',
-		description: "Combo Somos Pollos",
-		id: 1
-	},
-	{
-		title: 'COMBO BALON ORO',
-		price: 89,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/704_producto_76.png',
-		id: 2
-	},
-	{
-		title: 'Spaghetti with Meat Sauce',
-		price: 349,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/173_producto_80.png',
-		id: 3
-	},
-	{
-		title: 'Bacon and Eggs',
-		price: 349,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/173_producto_80.png',
-		id: 4
-	},
-	{
-		title: 'Chicken Salad',
-		price: 349,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/173_producto_80.png',
-		id: 5
-	},
-	{
-		title: 'Ravioli',
-		price: 349,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/173_producto_80.png',
-		id: 6
-	},
-	{
-		title: 'Tortellini',
-		price: 349,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/173_producto_80.png',
-		id: 7
-	},
-	{
-		title: 'Fish Sticks with Fries',
-		price: 349,
-		image_url: 'https://pollos.extrapos.mx/pollos/img/173_producto_80.png',
-		id: 8
-	}
+		"id": 1,
+		"title": "Área Chica",
+		"description": "1 Pierna, 1 Muslo, 1 Puré",
+		"price": 49,
+		"image_url": "/assets/images/areachica.png"
+	 },
+	 {
+		"id": 2,
+		"title": "Balón de Oro",
+		"description": "1 Pierna, 1 Muslo, 1 Fajita, 1 Puré, 1 Panecillo",
+		"price": 89,
+		"image_url": "/assets/images/balondeoro.png"
+	 },
+	 {
+		"id": 3,
+		"title": "Fuera de Lugar",
+		"description": "2 Fajita, 1 Puré, 1 Aderezo, 1 Panecillo",
+		"price": 99,
+		"image_url": "/assets/images/fueradelugar.png"
+	 },
+	 {
+		"id": 4,
+		"title": "Contra Golpe",
+		"description": "8 Piezas (Piernas y Muslos)",
+		"price": 119,
+		"image_url": "/assets/images/contragolpe.png"
+	 },
+	 {
+		"id": 5,
+		"title": "Gol Olimpico",
+		"description": "2 Piernas, 2 Muslos, 4 Fajitas, 2 Panecillos, 2 Aderezos",
+		"price": 249,
+		"image_url": "/assets/images/gololimpico.png"
+	 },
+	 {
+		"id": 6,
+		"title": "Penalty",
+		"description": "12 Piezas (Pierna y Muslo), 4 Pures y 4 Panecillos",
+		"price": 259,
+		"image_url": "/assets/images/penalty.png"
+	 },
+	 {
+		"id": 7,
+		"title": "Somos Pollos",
+		"description": "3 Piernas, 3 Muslos, 6 fajitas, 4 Panecillos, 3 Aderezos",
+		"price": 349,
+		"image_url": "/assets/images/somospollos.png"
+	 }
 ];
 
 function getItem(id) {

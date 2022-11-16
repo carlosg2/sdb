@@ -14,7 +14,7 @@
 	const dispatch = createEventDispatcher();
 
 	function format(num) {
-		return `$${num.toFixed(2)}`;
+		return `$${num.toFixed(0)}`;
 	}
 
 	function inc() {
@@ -69,7 +69,7 @@
                         {item.title}
                     </a>
                 </h3>
-                <p class="ml-4">
+                <p class="ml-4  tabular-nums ">
                     {format(item.price * quantity)}
                 </p>
             </div>
