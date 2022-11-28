@@ -1,8 +1,11 @@
 <script>
 	import cart from "./cart";
+  import CartIcon from './CartIcon.svelte';
 	export let item;
 
 	$: itemInCart = $cart.find((i) => i.id === item.id) !== undefined;
+
+  $: itemIndex = $cart.findIndex((i) => i.id === item.id);
 
 	function addToCart() {
 		cart.add({ id: item.id, quantity: 1 });
@@ -18,11 +21,11 @@
 	}
 
 	function inc() {
-		$cart[0].quantity++;
+		$cart[itemIndex].quantity++;
 	}
 
 	function dec() {
-		$cart[0].quantity--;
+		$cart[itemIndex].quantity--;
 	}
 
 
@@ -32,7 +35,7 @@
 
 </script>
 
-<div on:click={() => selected = item}
+<div 
     class="text-base-content flex px-4 items-start  border-[0.5px] border-base-300 bg-base-100 rounded-box " >
 
     <div class=" w-full relative space-y-1 py-4">
@@ -53,18 +56,24 @@
       </div>
 
       
+
+      
         {#if itemInCart}
             <!-- <img src="/images/day2/check.svg" alt="" /> -->
-            <div class="btn">Agregado</div>
+            <!-- <div class="btn">Agregado</div> -->
 
             
-            <!-- <div class="flex space-x-1">
-                <button class="btn btn-circle btn-sm" on:click={dec}><span> - </span></button>
-                <button class="btn btn-circle btn-sm" on:click={inc} ><span> + </span></button>
-            </div> -->
+            <div class="flex space-x-1">
+                <button class="btn btn-circle btn-sm" on:click|stopPropagation={dec}><span>
+                  <CartIcon type="minus" strokeColor="#fff" />
+                </span></button>
+                <button class="btn btn-circle btn-sm" on:click|stopPropagation={inc} ><span>
+                  <CartIcon type="plus" strokeColor="#fff" />
+                </span></button>
+            </div>
 
         {:else}
-        <button class=" btn" class:btn-primary={!itemInCart} on:click={addToCart}>
+        <button class=" btn btn-sm" class:btn-primary={!itemInCart} on:click|stopPropagation={addToCart}>
             Agregar
         </button>
         {/if}

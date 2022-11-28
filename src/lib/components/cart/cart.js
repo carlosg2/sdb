@@ -1,6 +1,7 @@
 import { writable, derived } from 'svelte/store';
 
 const cart = writable([]);
+// const items = writable([]);
 
 export default {
 	
@@ -90,4 +91,8 @@ export const items
 
 function getItem(id) {
 	return items.find((i) => i.id === id);
+}
+
+function getIndex(id) {
+	return items.findIndex((i) => i.id === id);
 }

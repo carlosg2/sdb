@@ -61,7 +61,7 @@
     <li class="py-6 flex font-heading" in:fade={{easing: expoOut}} out:slide={{easing: expoOut}} >
         <div class="indicator  flex-shrink-0 w-16 h-16">
             <div class="indicator-item  badge shadow badge-md badge-primary h-7 text-lg  font-bold">{quantity}</div>
-            <img src="{item.image_url}" class="rounded-lg shadow w-full h-full object-center object-cover" >
+            <img src="{item.image_url}" class="rounded-lg shadow w-full h-full object-center object-cover" alt="{item.title}" >
         </div>
 
         <div class="ml-4 flex-1 flex flex-col">
@@ -79,12 +79,12 @@
                 <p class="opacity-50">{item.description}</p>
 
                 <!-- <p class="">Qty 1</p> -->
-                <div class="flex space-x-1">
-                    <button class="btn btn-circle btn-sm" on:click={dec}>
+                <div class="flex space-x-1 pl-4">
+                    <button class="btn btn-circle btn-sm bg-base-200 " on:click={dec}>
 						<CartIcon type="minus" strokeColor="#fff" />
                     </button>
 					<span class=" btn btn-circle btn-sm bg-base-100">{quantity}</span>
-					<button class="btn btn-circle btn-sm" on:click={inc}>
+					<button class="btn btn-circle btn-sm bg-base-200" on:click={inc}>
 						<CartIcon type="plus" strokeColor="#fff" />
 					</button>
                 </div>

@@ -394,24 +394,24 @@ import cart , { totals, items } from '@lib/components/cart/cart';
   <a class="tab tab-lg tab-lifted">Info</a>
 </div> -->
 
-<div class=" sticky top-0 z-20 bg-base-200/50 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-100 " >
+<!-- Nav Bar -->
+
+<!-- <div class=" sticky top-0 z-20 bg-base-200/90 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-100 " >
   <div class="flex  max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
     {#each tienda.groups as link, index}  
-      <a 
+      <div
       use:useScrollChild={scrollIndex === index ? { x: true } : false}
       on:click|preventDefault={() => goto('#'+ slugify(link.title), { replaceState:false})}
       class:btn-primary="{scrollIndex === index}"
       class:btn-ghost="{scrollIndex != index}"
-      class="btn font-display border-0 text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</a>
+      class="btn font-display border-0 text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</div>
     {/each}
   </div>
-</div>
+</div> -->
 
-<div class="w-full flex justify-center items-center ">
+<!-- <div class="w-full flex justify-center items-center ">
 
-  <!-- p-4 md:p-12 container mx-auto h-full grid
-  gap-3 lg:gap-6 xl:gap-8 
-  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-y-auto (abajo) -->
+  
 
   <div class="p-4 md:p-12 container mx-auto h-full grid
               gap-3 lg:gap-6 xl:gap-8 
@@ -446,7 +446,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
                   {#if item.image_url}
       
                     <div class="ml-4 shrink-0  py-4">
-                      <img data-id={item.id}
+                      <img 
                         class="rounded-md w-20 h-20 md:h-28 md:w-28"  
                         src="{item.image_url}"
                         alt="demo"
@@ -459,43 +459,35 @@ import cart , { totals, items } from '@lib/components/cart/cart';
               </div>
 
 
-					    <!-- <MenuItem {item} /> -->
-
-                
-              <!-- <img
-                  data-id={item.id}
-                  on:click={() => selected = item}
-                  
-                  class="rounded-box"
-                  alt="a thumbnail"
-                  src="{item.image_url}"
-              > -->
+					    
           {/if}    
       {/each}
           
       {/each}
   </div>
 
-</div>
+</div> -->
 
 
 
-<div class="root ">
-	<div class="menu">
+<div class="relative mx-auto grid justify-items-center container align-items-start gap-8 grid-cols-1 md:grid-cols-2 py-20">
+	<div class="p-4 box-shadow-primary box-shadow box-shadow-xl rounded-box border border-base-300 gap-4 w-full">
 		<h2>Menú</h2>
-		<ul>
-			{#each items as item}
-				<li>
+		<div class="gap-4 grid">
+			{#each items as item} 
+      <div on:click={() => selected = item}>
 					<MenuItem {item} 
           on:update={(e) => updateItem(index, e.detail)} />
-				</li>
+        </div>
 			{/each}
-		</ul>
+      </div>
 	</div>
 	
-  <div class="cart sticky">
+  <div class="sticky w-full">
 		
     <h2>Mi Pedido</h2>
+
+    
 		
     {#if $cart.length === 0}
 			<div class="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
@@ -506,42 +498,38 @@ import cart , { totals, items } from '@lib/components/cart/cart';
       </div>
 		
     {:else}
-      <ul role="list" class="-my-6 divide-y divide-y-[0.5px] divide-base-100">
+      <div class="w-full divide-y divide-y-[0.5px] divide-base-100 gap-4">
 				
         {#each $cart as cartItem, index (cartItem.id)}
-						<CartItem item={items.find((i) => i.id === cartItem.id)}
+						<CartItem item={items.find((i) => i.id === cartItem.id)} 
 							        quantity={cartItem.quantity}
-							        on:update={(e) => updateItem(index, e.detail)}
-						/>
+							        on:update={(e) => updateItem(index, e.detail)} />
 				{/each}
 
-			</ul>
-
-      <div class="border-t border-base-100 py-6  tabular-nums ">
-        <div class="flex justify-between text-base font-medium">
-          <p>Subtotal</p>
-          <p>${$totals.subtotal}</p>
+        <div class="border-t border-base-100 py-6  tabular-nums ">
+          <div class="flex justify-between text-base font-medium">
+            <p>Subtotal</p>
+            <p>${$totals.subtotal}</p>
+    
+          </div>
+    
+          <div class="flex justify-between text-base font-medium">
+            <p>I.V.A.</p>
+            <p class="tabular-nums">${$totals.tax}</p>
+    
+          </div>
   
+          <div class="flex justify-between text-base font-medium">
+            <p>Total</p>
+            <p class="tabular-nums">${$totals.total}</p>
+    
+          </div>
+    
+          <div class="mt-6 ">
+            <a href="#_" class="btn btn-block btn-lg btn-primary">Realizar Pedido</a>
+          </div>
         </div>
-  
-        <div class="flex justify-between text-base font-medium">
-          <p>I.V.A.</p>
-          <p class="tabular-nums">${$totals.tax}</p>
-  
-        </div>
-
-        <div class="flex justify-between text-base font-medium">
-          <p>Total</p>
-          <p class="tabular-nums">${$totals.total}</p>
-  
-        </div>
-  
-        <div class="mt-6 ">
-          <a href="#_" class="btn btn-block btn-lg btn-primary">Realizar Pedido</a>
-        </div>
-  
       </div>
-
 		{/if}
 
     
@@ -595,9 +583,9 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 			justify-self: end;
 		}
 
-		.cart {
+		/* .cart {
 			justify-self: start;
-		}
+		} */
 	}
 
 	h2 {
@@ -622,7 +610,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 		gap: 2rem;
 	}
 
-	dl {
+	/* dl {
 		text-align: right;
 		display: grid;
 		column-gap: 1.5rem;
@@ -641,7 +629,7 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 		font-size: 2rem;
 		font-weight: 700;
 		min-width: 120px;
-	}
+	} */
 
 	dt:last-child {
 		color: var(--button-color);
@@ -649,44 +637,25 @@ import cart , { totals, items } from '@lib/components/cart/cart';
 
 	.cart {
 		position: sticky;
-		top: 4rem;
+		top: 8rem;
 	}
 
-	.cart li {
-		/* border-bottom: 1px solid #d7d7f9; */
+	/* .cart li {
+		border-bottom: 1px solid #d7d7f9;
 		padding: 2rem 0;
-	}
+	} */
 
-	.cart li:first-child {
+	/* .cart li:first-child {
 		padding-top: 0;
-	}
+	} */
 
 	/* .cart li:last-child {
 		border-width: 5px;
 	} */
 
-	.cart ul {
+	/* .cart ul {
 		margin-bottom: 2rem;
-	}
+	} */
 
-	.bg {
-		position: fixed;
-		z-index: 0;
-	}
-
-	.bg-1 {
-		bottom: 0;
-		right: 0;
-	}
-
-	.bg-2 {
-		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.bg-3 {
-		top: 0;
-		right: 0;
-	}
+	
 </style>
