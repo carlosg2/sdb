@@ -11,15 +11,47 @@
     import { fade, fly, scale, slide } from 'svelte/transition';
   import * as eases from 'svelte/easing';
     import { onMount } from 'svelte';
+
+
+    import cart , { totals, items } from '@lib/components/cart/cart';
+  
+  $cart = [
+      { id: 3, quantity: 1 },
+      { id: 5, quantity: 2 }
+  ];
+
+  function updateItem(index, quantity) {
+      $cart[index].quantity = quantity;
+  }
+
+
+  import { name, greeting, productitems } from '@lib/components/cart/catalog';
+
+
+
+
   
   let selected = null;
   
   const get_src = id => `/assets/images/${id}.png`;
   
-  
+  $: console.log($productitems); 
     export let data
     $: tienda = data.tienda;
     $: active = String($page.url).split("#")[0];
+    //productitems.update ( update => { return [data.tienda.groups[0].productos] }) 
+
+    $: {
+        data.tienda?.groups?.productos?.forEach((d) => {
+      
+            productitems.update ( update => { return [...productitems, data.tienda?.groups?.productos] }) 
+      
+            //numero += d.node.precio;
+      console.log(numero);
+    })};
+
+    let numero = 0;
+
   
     export let scrollIndex = 0;
   
@@ -128,17 +160,6 @@
   
   
   
-  import cart , { totals, items } from '@lib/components/cart/cart';
-  
-      $cart = [
-          { id: 3, quantity: 1 },
-          { id: 5, quantity: 2 }
-      ];
-  
-      function updateItem(index, quantity) {
-          $cart[index].quantity = quantity;
-      }
-  
   
   
   </script>
@@ -151,7 +172,12 @@
         {/each}
   </svelte:head>
   
+  <h1>{$productitems}</h1>
+
   
+
+
+  <!-- <h1>{$greeting}</h1> -->
   
   
   {#if selected}
