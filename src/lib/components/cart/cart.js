@@ -25,7 +25,7 @@ export default {
 export const totals = derived(cart, ($cart) => {
 	let subtotal = 0;
 	for (let cartItem of $cart) {
-		const item = getItem(cartItem.id);
+		const item = getItem(cartItem.id); 
 		subtotal += item.price * cartItem.quantity;
 	}
 	const tax = subtotal * 0.0975;
