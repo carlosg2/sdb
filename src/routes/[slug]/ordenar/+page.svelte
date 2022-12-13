@@ -13,12 +13,12 @@
     import { onMount } from 'svelte';
 
 
-    import cart , { totals, items } from '@lib/components/cart/cart';
+    import cart , { totals, items, store } from '@lib/components/cart/cart';
   
-  $cart = [
-      { id: 3, quantity: 1 },
-      { id: 5, quantity: 2 }
-  ];
+    // $cart = [
+    //     { id: 1, quantity: 1 },
+    //     { id: 5, quantity: 2 }
+    // ];
 
   function updateItem(index, quantity) {
       $cart[index].quantity = quantity;
@@ -35,20 +35,26 @@
   
   const get_src = id => `/assets/images/${id}.png`;
   
-  $: console.log($productitems); 
+  //$: console.log($productitems); 
     export let data
     $: tienda = data.tienda;
     $: active = String($page.url).split("#")[0];
-    //productitems.update ( update => { return [data.tienda.groups[0].productos] }) 
+    // groups.update ( update => { return data.tienda.groups }) 
 
-    $: {
-        data.tienda?.groups?.productos?.forEach((d) => {
+    store.update ( update => { return data.tienda }) 
+
+
+
+   //$: console.log($store)
+
+    // $: {
+    //     data.tienda?.groups?.productos?.forEach((d) => {
       
-            productitems.update ( update => { return [...productitems, data.tienda?.groups?.productos] }) 
+    //         productitems.update ( update => { return [...productitems, data.tienda?.groups?.productos] }) 
       
-            //numero += d.node.precio;
-      console.log(numero);
-    })};
+    //         //numero += d.node.precio;
+    //   console.log(numero);
+    // })};
 
     let numero = 0;
 
@@ -157,6 +163,9 @@
     scrollLock(selected);
   });
   
+
+
+ 
   
   
   
@@ -171,9 +180,6 @@
             <link rel="preload" as="image" href="/assets/images/{id}.png" />               
         {/each}
   </svelte:head>
-  
-  <h1>{$productitems}</h1>
-
   
 
 
@@ -413,22 +419,24 @@
   </div>
   
   
-  
   <!-- <div class="tabs justify-center tabs-boxed">
     <a class="tab tab-lg tab-lifted tab-active">Menú</a> 
     <a class="tab tab-lg tab-lifted ">Contacto</a> 
     <a class="tab tab-lg tab-lifted">Info</a>
   </div> -->
+
+  <!-- {JSON.stringify($store.groups)} -->
   
   <div class=" sticky top-0 z-20 bg-base-200/90 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-100 " >
     <div class="flex  max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
-      {#each tienda.groups as link, index}  
+      {#each $store.groups as link, index}  
+      
         <div
         use:useScrollChild={scrollIndex === index ? { x: true } : false}
         on:click|preventDefault={() => goto('#'+ slugify(link.title), { replaceState:false})}
         class:btn-primary="{scrollIndex === index}"
         class:btn-ghost="{scrollIndex != index}"
-        class="btn font-display border-0 text-lg md:text-xl btn-md md:btn-lg w-auto mr-2">{link.title}</div>
+        class="btn font-display border-0 text-lg md:text-xl btn-md md:btn-lg w-auto mr-2"> {link.title}</div>
       {/each}
     </div>
   </div>
@@ -442,7 +450,7 @@
     <div class="p-4 md:p-12 container mx-auto h-full grid
                 gap-3 lg:gap-6 xl:gap-8 
                 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-y-auto">
-        {#each tienda.groups as group}
+        {#each $store.groups as group}
             {#each group.productos as item }
                 {#if item.image_url}
                     
@@ -536,10 +544,10 @@
       {:else}
         <div class="w-full divide-y divide-y-[0.5px] divide-base-100 gap-4">
                   
-          {#each $cart as cartItem, index (cartItem.id)}
+          {#each  $cart as cartItem, index (cartItem.id)}
                           <CartItem item={items.find((i) => i.id === cartItem.id)} 
                                       quantity={cartItem.quantity}
-                                      on:update={(e) => updateItem(index, e.detail)} />
+                                      on:update={(e) => updateItem(index, e.detail)} /> 
                   {/each}
   
           <div class="border-t border-base-100 py-6  tabular-nums ">

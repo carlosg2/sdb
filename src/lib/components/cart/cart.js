@@ -1,7 +1,11 @@
 import { writable, derived } from 'svelte/store';
 
+
+
+export const groups = writable ([]);
+export const store = writable ({});
+
 const cart = writable([]);
-// const items = writable([]);
 
 export default {
 	
@@ -22,10 +26,12 @@ export default {
 	}
 };
 
-export const totals = derived(cart, ($cart) => {
+export const totals = derived([cart, store], ([$cart, $store]) => {
 	let subtotal = 0;
+	//console.log($store);
 	for (let cartItem of $cart) {
-		const item = getItem(cartItem.id); 
+		//console.log(cartItem.id);
+		const item = getItem(cartItem.id); //$store.groups[0].productos.find((i) => i.id === cartItem.id); 
 		subtotal += item.price * cartItem.quantity;
 	}
 	const tax = subtotal * 0.0975;
@@ -35,6 +41,9 @@ export const totals = derived(cart, ($cart) => {
 		total: (subtotal + tax).toFixed(2)
 	};
 });
+
+
+
 
 export const items 
 = [
@@ -90,9 +99,14 @@ export const items
 ];
 
 function getItem(id) {
-	return items.find((i) => i.id === id);
+	return items.find((i) => i.id === id); 
+	//return derived(store, $store => $store.groups[0].productos.find((i) => i.id === id)); //
 }
+
+
 
 function getIndex(id) {
 	return items.findIndex((i) => i.id === id);
+	//return derived(store, $store => $store.groups[0].productos.findIndex((i) => i.id === id));
 }
+

@@ -1,5 +1,71 @@
+<style>
+.root {
+  min-height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  /* font-family: Poppins, sans-serif; */
+  /* background-color: #e5e5e5; */
+  padding: 106px 0;
+  position: relative;
+
+  --button-color: #6b00f5;
+}
+
+.root > *:not(img) {
+  /* background-color: white; */
+  border-radius: 25px;
+  box-shadow: 0px 0px 50px #2c0000;
+  padding: 50px 38px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 675px;
+  z-index: 1;
+}
+
+@media (min-width: 860px) {
+  .root {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu {
+    justify-self: end;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  max-width: 375px;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+dt:last-child {
+  color: var(--button-color);
+}
+
+.cart {
+  position: sticky;
+  top: 8rem;
+}
+</style>
+
 <script>
 import Head from "@components/head.svelte";
+import MenuItem from "@lib/components/cart/MenuItem.svelte";
+import CartItem from "@lib/components/cart/CartItem.svelte";
+import CartIcon from "@lib/components/cart/CartIcon.svelte";
 import { page } from "$app/stores";
 import Scrolly from "@lib/components/helpers/Scrolly.svelte";
 import useScrollChild from "@apsc/scroll-child-action";
@@ -9,13 +75,45 @@ import { fade, fly, scale, slide } from "svelte/transition";
 import * as eases from "svelte/easing";
 import { onMount } from "svelte";
 
+import Products from "@lib/components/commerce/Products.svelte";
+import Cart from "@lib/components/commerce/Cart.svelte";
+import Address from "@lib/components/commerce/Address.svelte";
+import { products } from "@lib/components/commerce/cart.js";
+
+// import cart, {
+//   totals,
+//   items,
+//   store,
+// } from '@lib/components/cart/cart'
+
+import { cart } from "@lib/components/commerce/cart";
+
+// $cart = [
+//     { id: 1, quantity: 1 },
+//     { id: 5, quantity: 2 }
+// ];
+
+function updateItem(index, quantity) {
+  $cart[index].quantity = quantity;
+}
+
 let selected = null;
 
 const get_src = (id) => `/assets/images/${id}.png`;
 
+//$: console.log($productitems);
 export let data;
 $: tienda = data.tienda;
 $: active = String($page.url).split("#")[0];
+products.update((update) => {
+  return data.tienda.groups[0].productos;
+});
+
+// store.update(update => {
+//   return data.tienda
+// })
+
+let numero = 0;
 
 export let scrollIndex = 0;
 
@@ -121,7 +219,7 @@ onMount(() => {
 });
 </script>
 
-<Head title="{'Menú Club de Pollos - ' + tienda.store}" />
+<!-- <Head title={'Menú Club de Pollos - ' + tienda.store} /> -->
 
 <svelte:head>
   {#each ["areachica", "tirolibre", "fueradelugar", "penalty", "balondeoro", "contragolpe", "dechilena", "depalomita", "juezdelinea", "detaconcito", "detijera", "goleador"] as id}
@@ -134,17 +232,6 @@ onMount(() => {
     class="h-full w-full bg-base-200   justify-center place-items-center h-full flex fixed top-0 left-0 z-30"
     transition:fade="{{ duration: 50 }}">
   </div>
-
-  <!-- <div class="h-full w-full flex lex fixed top-0 left-0 overflow-y-auto justify-center items-center" on:click={() => selected = null}>
-		<div class=" h-full flex flex-col xl:flex-row w-full" >
-		  <img src={get_src(selected)} class="z-10 will-tranform" transition:expand={{id:selected}} />
-		  <div class=" bg-base-200 p-16 space-y-4 grow shrink-0 basis-28" transition:fly={{y:100, duration:500, easing: eases.expoOut }}>
-			<div class="text-2xl leading-8 font-extrabold text-primary sm:text-3xl sm:leading-9">Titulo del producto</div>
-			<div class="leading-6 font-semibold tracking-wide text-base-content uppercase">Grupo</div>
-			<div class="text-xl leading-7 text-base-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure cum, est amet delectus, blanditiis voluptatem laborum pariatur consequatur quae voluptate, nisi. Laborum adipisci iste earum distinctio, fugit, quas ipsa impedit.</div>
-		  </div>
-		</div>
-	  </div> -->
 
   <section
     class="h-full w-full flex fixed top-0 left-0 overflow-y-auto justify-center z-30">
@@ -177,7 +264,9 @@ onMount(() => {
                 class="inline-block mb-4 text-2xl font-bold font-heading text-primary">
                 <span>${selected.price}</span>
               </p>
-              <p class="max-w-md text-base-content">{selected.description}</p>
+              <p class="max-w-md text-base-content">
+                {selected.description}
+              </p>
             </div>
 
             <div class="my-4">
@@ -193,11 +282,11 @@ onMount(() => {
                       type="radio"
                       name="shippingOption"
                       value="standard"
-                      id="standard" />
+                      id="uno" />
 
                     <label
                       class="flex items-center justify-between p-4 text-sm font-medium  border border-base-300 rounded-box cursor-pointer peer-checked:border-blue-500 hover:bg-base-100 peer-checked:bg-base-100 peer-checked:ring-1 peer-checked:ring-blue-500"
-                      for="standard">
+                      for="dos">
                       <span> Papas Fritas </span>
 
                       <span> $60 </span>
@@ -402,15 +491,15 @@ onMount(() => {
   </section>
 
   <!-- <div class="h-full w-full place-items-star h-full flex fixed top-0 left-0" on:click={() => selected = null}>
-		<div class="box-border rounded-0 overflow-hidden" transition:expand={{id:selected}}>
-			<img
+    <div class="box-border rounded-0 overflow-hidden" transition:expand={{id:selected}}>
+      <img
                 src={get_src(selected)}
                 class="w-full h-full"
-				alt="full size"
+        alt="full size"
                 
-			>
-		</div>
-	</div> -->
+      >
+    </div>
+  </div> -->
 {/if}
 
 <div
@@ -422,7 +511,11 @@ onMount(() => {
       <p class="text-xs font-bold text-primary  tracking-widest uppercase">
         SUCURSAL
       </p>
-      <h1 class=" text-5xl font-display font-bold ">{tienda.store}</h1>
+
+      <h1 class=" text-5xl font-display font-bold ">
+        {tienda.store}
+      </h1>
+
       <p class="text-sm font-semibold tracking-widest pb-5 ">
         {tienda.direccion}, {tienda.ciudad}
       </p>
@@ -485,21 +578,26 @@ onMount(() => {
     <a class="tab tab-lg tab-lifted">Info</a>
   </div> -->
 
+<!-- {JSON.stringify($store.groups)} -->
+
 <div
-  class=" sticky top-0 z-20 bg-base-100/50 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-300 ">
+  class=" sticky top-0 z-20 bg-base-200/90 backdrop-blur-md saturate-200 border-b-[0.5px]  border-base-100 ">
   <div
     class="flex  max-w-screen-lg mx-auto flex-nowrap text-sm font-bold overflow-x-auto  px-4 py-3 md:py-4 no-scrollbar ">
-    {#each tienda.groups as link, index}
-      <!-- svelte-ignore -->
-      <a
-        use:useScrollChild="{scrollIndex === index ? { x: true } : false}"
-        on:click|preventDefault="{() =>
-          goto('#' + slugify(link.title), { replaceState: false })}"
-        class:btn-primary="{scrollIndex === index}"
-        class:btn-ghost="{scrollIndex != index}"
+    <!-- {#each $store.groups as link, index}
+      <div
+        use:useScrollChild={scrollIndex === index
+          ? { x: true }
+          : false}
+        on:click|preventDefault={() =>
+          goto('#' + slugify(link.title), { replaceState: false })}
+        class:btn-primary={scrollIndex === index}
+        class:btn-ghost={scrollIndex != index}
         class="btn font-display border-0 text-lg md:text-xl btn-md md:btn-lg w-auto mr-2"
-        >{link.title}</a>
-    {/each}
+      >
+        {link.title}
+      </div>
+    {/each} -->
   </div>
 </div>
 
@@ -512,27 +610,31 @@ onMount(() => {
     class="p-4 md:p-12 container mx-auto h-full grid
                 gap-3 lg:gap-6 xl:gap-8 
                 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  overflow-y-auto">
-    {#each tienda.groups as group}
+    <!-- {#each $store.groups as group}
       {#each group.productos as item}
         {#if item.image_url}
           <div
-            on:click="{() => (selected = item)}"
-            class="text-base-content flex px-4 items-start  border-[0.5px] border-base-300 bg-base-100 rounded-box select-none">
+            on:click={() => (selected = item)}
+            class="text-base-content flex px-4 items-start  border-[0.5px] border-base-300 bg-base-100 rounded-box select-none"
+          >
             <div class=" w-full relative space-y-1 py-4">
               <div class="flex justify-between items-center ">
                 <div
-                  class="shrink text-base-content tracking-wide font-bold font-display text-lg leading-5 pb-1 capitalize">
+                  class="shrink text-base-content tracking-wide font-bold font-display text-lg leading-5 pb-1 capitalize"
+                >
                   {item.title}
                 </div>
               </div>
 
               <div
-                class="text-sm md:text-base line-clamp-2 tracking-wider leading-4 opacity-50">
+                class="text-sm md:text-base line-clamp-2 tracking-wider leading-4 opacity-50"
+              >
                 {item.description}
               </div>
 
               <div
-                class="text-sm md:text-base text-base-content tracking-wider font-semibold flex items-center  tabular-nums opacity-50">
+                class="text-sm md:text-base text-base-content tracking-wider font-semibold flex items-center  tabular-nums opacity-50"
+              >
                 ${item.price}
               </div>
             </div>
@@ -540,24 +642,33 @@ onMount(() => {
             {#if item.image_url}
               <div class="ml-4 shrink-0  py-4">
                 <img
-                  data-id="{item.id}"
                   class="rounded-md w-20 h-20 md:h-28 md:w-28"
-                  src="{item.image_url}"
-                  alt="demo" />
+                  src={item.image_url}
+                  alt="demo"
+                />
               </div>
             {/if}
           </div>
-
-          <!-- <img
-                    data-id={item.id}
-                    on:click={() => selected = item}
-                    
-                    class="rounded-box"
-                    alt="a thumbnail"
-                    src="{item.image_url}"
-                > -->
         {/if}
       {/each}
-    {/each}
+    {/each} -->
+  </div>
+</div>
+
+<div
+  class="relative  mx-auto grid justify-items-center container align-items-start gap-8 grid-cols-1 md:grid-cols-2 py-20">
+  <div
+    class="p-4  box-shadow-primary box-shadow box-shadow-xl rounded-box border border-base-300 gap-4 w-full">
+    <h2 class="text-3xl font-semibold mb-10">Menú</h2>
+    <div class="gap-4 grid">
+      <Products />
+    </div>
+  </div>
+
+  <div class="cart sticky w-full">
+    <h2 class="text-3xl font-semibold mb-10">Mi Pedido</h2>
+
+    <Cart />
+    <Address />
   </div>
 </div>

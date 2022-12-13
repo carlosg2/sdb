@@ -33,17 +33,24 @@
 		const json = await res.json()
 		result = JSON.stringify(json)
 	}
+
+    
 	
 	async function get1() {
         const opts = {
             body: JSON.stringify({
                 jsonrpc: '2.0',
                 method: 'call',
+                params: {
+                    service: 'object',
+                    method: 'execute',
+                    args: ['printlab',28,'JSON2022','product.template','search_read',[],[]]
+                }
                 
                 
             }),
             headers: { 'Content-Type': 'application/json' },
-            method: 'POST'
+            method: 'GET'
         };
         await fetch('https://dev.printlab.mx/jsonrpc/', opts);
     }
@@ -64,7 +71,7 @@
 
 <input bind:value={foo} />
 <input bind:value={bar} />
-<button type="button" on:click={getProducts}>
+<button type="button" on:click={get1}>
 	Post it.
 </button>
 <p>
